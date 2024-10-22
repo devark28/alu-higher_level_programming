@@ -4,4 +4,4 @@ import dis
 def magic_calculation(a, b):
   pass
 
-dis.dis(magic_calculation)
+dis.dis(magic_calculation(1, 2))
