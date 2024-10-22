@@ -3,7 +3,6 @@
 
 def uppercase(text):
     charsBag = str(text)
-    print(charsBag)
     res = ""
     for c in charsBag:
         if ord(c) >= ord('a') and ord(c) <= ord('z'):
@@ -13,4 +12,4 @@ def uppercase(text):
             res += c
     return res
 
-uppercase("Holberton School 98 Battery street")
+print(uppercase("Holberton School 98 Battery street"))
