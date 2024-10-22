@@ -1,0 +1,3 @@
+#!/usr/bin/python3
+code="${PYFILE}"
+python3 -m py_compile $code > "${PYFILE}c"
