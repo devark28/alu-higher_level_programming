@@ -2,7 +2,7 @@
 
 
 def uppercase(text):
-    charsBag = str(text).split()
+    charsBag = str(text).split("")
     res = ""
     for c in charsBag:
         if ord(c) >= ord('a') and ord(c) <= ord('z'):
