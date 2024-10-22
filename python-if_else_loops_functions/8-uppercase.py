@@ -2,9 +2,8 @@
 
 
 def uppercase(text):
-    charsBag = str(text)
     res = ""
-    for c in charsBag:
+    for c in text:
         if ord(c) >= ord('a') and ord(c) <= ord('z'):
             translation = ord(c) - ord('a')
             res += chr(ord('A') + translation)
