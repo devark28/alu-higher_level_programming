@@ -1,2 +1,3 @@
 #!/usr/bin/python3
-print(f"[a..z]")
+for c in range(ord('a'), ord('z') + 1):
+    print(chr(c), end="")
