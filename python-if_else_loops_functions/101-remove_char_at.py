@@ -2,4 +2,9 @@
 
 
 def remove_char_at(str, n):
-    return str[:n] + str[n + 1:]
+    res=""
+    for i in range(len(str)):
+        if i != n:
+            res += str[i]
+    print(f"{res}")
+    return res
