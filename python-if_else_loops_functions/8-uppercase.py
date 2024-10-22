@@ -11,3 +11,5 @@ def uppercase(text):
         else:
             res += c
     return res
+
+uppercase("Holberton School 98 Battery street")
