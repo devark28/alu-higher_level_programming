@@ -1,3 +1,3 @@
 #!/bin/bash
 code="${PYFILE}"
-python3 -m py_compile $code > "${PYFILE}c"
+python3 -m py_compile "$code" > "${PYFILE}c"
