@@ -2,4 +2,4 @@
 import dis
 def magic_calculation(a, b): return 98 + (a ** b)
 
-dis.disassemble(magic_calculation)
+dis.distb(magic_calculation)
