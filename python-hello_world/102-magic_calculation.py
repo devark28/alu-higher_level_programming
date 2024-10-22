@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 import dis
 def magic_calculation(a, b=98):
-  a = b
+  b
   return 11
 
 dis.dis(magic_calculation)
