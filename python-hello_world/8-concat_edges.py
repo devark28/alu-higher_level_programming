@@ -5,5 +5,5 @@ i=0
 for c in str:
   print(f"{i}: {c}")
   i+=1
-str=str[39:67]+str[107:112]+str[0:6]
+# str=str[39:67]+str[107:112]+str[0:6]+str[66]
 print(str)
