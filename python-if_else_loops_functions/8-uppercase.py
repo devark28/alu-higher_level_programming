@@ -10,4 +10,4 @@ def uppercase(text):
             res += chr(ord('A') + translation)
         else:
             res += c
-    return res
+    print("{}".format(res))
