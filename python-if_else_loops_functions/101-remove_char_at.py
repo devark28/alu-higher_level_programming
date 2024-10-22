@@ -8,5 +8,3 @@ def remove_char_at(str, n):
             res += str[i]
     print(f"{res}")
     return res
-
-remove_char_at("Holberton", 3)
