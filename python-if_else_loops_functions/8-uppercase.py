@@ -11,5 +11,3 @@ def uppercase(text):
         else:
             res += c
     return res
-
-print(uppercase("Holberton School 98 Battery street"))
