@@ -2,7 +2,7 @@
 
 
 def uppercase(text):
-    charsBag = str(text).split(" ")
+    charsBag = str(text)
     print(charsBag)
     res = ""
     for c in charsBag:
