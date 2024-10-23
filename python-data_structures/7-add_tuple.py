@@ -9,4 +9,4 @@ def add_tuple(tuple_a=(), tuple_b=()):
     #     tuple_c[i] = tuple_a[i] if i < len(tuple_a) else 0
     return list(map(sum, zip(tuple_a, tuple_b)))
     
-print(add_tuple((1), (1, 2, 3)))
+print(add_tuple((1,), (1, 2, 3)))
