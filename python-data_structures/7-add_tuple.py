@@ -9,5 +9,6 @@ def add_tuple(tuple_a=(), tuple_b=()):
             tuple_b
             )
         )
-    return (tp[0], tp[1])
+    return (tp[0] if tp.__len__() > 0 else 0,
+            tp[1] if tp.__len__() > 1 else 0)
 print(add_tuple((1), (1, 2, 3)))
