@@ -1,2 +1,4 @@
 #!/usr/bin/python3
-'#pythoniscool'
+import os
+
+os.write(1, b"#pythoniscool\n")
