@@ -5,5 +5,5 @@ def delete_at(my_list=[], idx=0):
     if idx < 0 or idx > my_list.__len__() - 1:
         return my_list 
     else:
-        return list(filter(lambda n, i: i != idx, list(enumerate(my_list))))
+        return list(filter(lambda n, i: i != idx, my_list))
 delete_at([1, 2, 3, 4, 5], 3)
