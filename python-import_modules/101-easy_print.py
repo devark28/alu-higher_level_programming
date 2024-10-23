@@ -1,2 +1,2 @@
 #!/usr/bin/python3
-exec('x=#pythoniscool; x')
+exec('x="#pythoniscool"; x')
