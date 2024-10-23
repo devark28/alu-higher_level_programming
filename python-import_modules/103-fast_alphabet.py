@@ -1,2 +1,2 @@
 #!/usr/bin/python3
-print("ABCDEFGHIJKLMNOPQRSTUVWXYZ")
+print(map(chr, range(65, 91)))
