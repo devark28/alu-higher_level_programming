@@ -2,13 +2,10 @@
 
 
 def add_tuple(tuple_a=(), tuple_b=()):
-    tp = tuple(
-        map(
-            lambda x=0, y=0: x + y,
-            tuple_a,
-            tuple_b
-            )
-        )
-    return (tp[0] if tp.__len__() > 0 else 0,
-            tp[1] if tp.__len__() > 1 else 0)
+    biggest_tuple_len = len(tuple_a) if len(tuple_a) > len(tuple_b) else len(tuple_b)
+    for i in range(biggest_tuple_len):
+        if i >= len(tuple_a):
+            tuple_a += (0,)
+        if i >= len(tuple_b):
+            tuple_b += (0,)
 print(add_tuple((1), (1, 2, 3)))
