@@ -9,7 +9,7 @@ if __name__ == "__main__":
         exit(1)
     a = int(argv[1])
     b = int(argv[3])
-    op = argv[2]
+    op = str(argv[2])
     result = None
     match op:
         case '+':
