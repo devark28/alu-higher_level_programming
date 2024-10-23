@@ -7,6 +7,6 @@ def delete_at(my_list=[], idx=0):
     else:
         del my_list[idx]
         return my_list
-lst = [1, 2, 3, 4, 5]
-print(delete_at(lst, 3))
-print(lst)
+# lst = [1, 2, 3, 4, 5]
+# print(delete_at(lst, 3))
+# print(lst)
