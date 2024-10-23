@@ -6,4 +6,4 @@ def delete_at(my_list=[], idx=0):
         return my_list 
     else:
         return list(filter(lambda num: num[0] != idx, list(enumerate(my_list))))
-delete_at([1, 2, 3, 4, 5], 3)
+print(delete_at([1, 2, 3, 4, 5], 3))
