@@ -3,6 +3,6 @@
 
 def best_score(a_dictionary):
     if a_dictionary:
-        return max(a_dictionary.values())
+        return max(a_dictionary, a_dictionary.values())
     return None
 print(best_score({'John': 100, 'Bob': 300, 'Mike': 200, 'Sarah': 500}))
