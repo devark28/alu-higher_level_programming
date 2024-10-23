@@ -13,13 +13,13 @@ if __name__ == "__main__":
     result = None
     match op:
         case '+':
-            add(a, b)
+            result = add(a, b)
         case '-':
-            sub(a, b)
+            result = sub(a, b)
         case '*':
-            mul(a, b)
+            result = mul(a, b)
         case '/':
-            div(a, b)
+            result = div(a, b)
         case _:
             print("Unknown operator. Available operators: +, -, * and /")
             exit(1)
