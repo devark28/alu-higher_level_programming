@@ -10,4 +10,4 @@ def add_tuple(tuple_a=(), tuple_b=()):
             )
         )
     return (x, y)
-print(add_tuple((1, 2), (1, 2)))
+print(add_tuple((1, 2, 3), (1, 2)))
