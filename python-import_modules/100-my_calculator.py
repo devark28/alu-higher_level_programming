@@ -11,7 +11,7 @@ if __name__ == "__main__":
     b = int(argv[3])
     op = argv[2]
     result = None
-    match op:
+    match argv[2]:
         case '+':
             add(a, b)
         case '-':
