@@ -6,6 +6,6 @@ if __name__ == "__main__":
     module_file = './hidden_4.pyc'
     hidden_module = mach.SourcelessFileLoader(module_name, module_file).load_module()
     names = dir(hidden_module)
-        print(names)
+    print(names)
     # for name in names:
         # if not name.startswith('__'):
