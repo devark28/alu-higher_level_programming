@@ -12,5 +12,5 @@ def delete_at(my_list=[], idx=0):
                         enumerate(my_list)))))
         return my_list
 lst = [1, 2, 3, 4, 5]
-print(print(delete_at(lst, 3)))
+print(delete_at(lst, 3))
 print(lst)
