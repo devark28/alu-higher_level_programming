@@ -10,5 +10,5 @@ def safe_print_list_integers(my_list=[], x=0):
             count += 1
     except:
         pass
-    print("{:d}".format(num))
+    print("{:d}".format(int(num)))
     return count
