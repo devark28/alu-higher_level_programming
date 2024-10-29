@@ -6,4 +6,4 @@ def safe_print_list(my_list=[], x=0):
         print("{:d}", my_list[:x], end="")
         print()
     except Exception as e:
-        raise e
+        pass
