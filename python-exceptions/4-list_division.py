@@ -21,4 +21,4 @@ def list_division(my_list_1, my_list_2, list_length):
         finally:
             return result
 
-list_division([10, 0, 4], [2, 4, 0], 3)
+print(list_division([10, 0, 4], [2, 4, 0], 3))
