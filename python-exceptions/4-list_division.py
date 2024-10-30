@@ -9,12 +9,13 @@ def list_division(my_list_1, my_list_2, list_length):
         except ZeroDivisionError:
             result.append(0)
             print("division by 0")
+            continue
+        except IndexError:
+            result.append(0)
+            print("out of range")
+            continue
         except Exception as e:
             result.append(0)
             print(e.args)
-            if e.args[0] == 'list index out of range':
-                print("out of range")
-            # else:
-            #     print("wrong type")
         finally:
             return result
