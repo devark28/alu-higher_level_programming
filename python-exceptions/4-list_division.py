@@ -19,6 +19,7 @@ def list_division(my_list_1, my_list_2, list_length):
         #     result.append(0)
         #     print(e.args)
         finally:
-            return result
+            continue
+    return result
 
 print(list_division([10, 0, 4], [2, 4, 0], 3)) # [5.0]
