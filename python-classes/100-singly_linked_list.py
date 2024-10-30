@@ -63,3 +63,17 @@ class SinglyLinkedList:
         while current.next_node is not None and current.next_node.data < value:
             current = current.next_node
         current.next_node = Node(value, current.next_node)
+
+sll = SinglyLinkedList()
+sll.sorted_insert(2)
+sll.sorted_insert(5)
+sll.sorted_insert(3)
+sll.sorted_insert(10)
+sll.sorted_insert(1)
+sll.sorted_insert(-4)
+sll.sorted_insert(-3)
+sll.sorted_insert(4)
+sll.sorted_insert(5)
+sll.sorted_insert(12)
+sll.sorted_insert(3)
+print(sll)
