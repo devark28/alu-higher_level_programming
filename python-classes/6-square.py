@@ -35,8 +35,10 @@ class Square:
         self.__size = size
 
     def my_print(self):
-        print(*(" " * self.__position[0]), sep="", end="")
-        print(*("#" * self.__size for _ in range(self.__size)), sep="\n")
+        # print(*(" " * self.__position[0]), sep="", end="")
+        # print(*("#" * self.__size for _ in range(self.__size)), sep="\n")
+        for _ in range(self.__size):
+            print(" " * self.__position[0] + "#" * self.__size)
 
     @property
     def position(self):
