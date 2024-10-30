@@ -37,8 +37,9 @@ class Square:
     def my_print(self):
         # print(*(" " * self.__position[0]), sep="", end="")
         # print(*("#" * self.__size for _ in range(self.__size)), sep="\n")
-        for _ in range(self.__size):
-            print(" " * self.__position[0] + "#" * self.__size, end="")
+        for i in range(self.__size):
+            print(" " * self.__position[0] + "#" * self.__size,
+                  end="" if i < self.__size - 1 else "\n")
         print()
 
     @property
