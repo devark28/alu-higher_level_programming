@@ -60,5 +60,4 @@ class Square:
                 string += "\n" * self.__position[1]
             string += " " * self.__position[0] + "#" * self.__size
             string += "\n" if i < self.__size - 1 else ""
-        string += "\n"
         return string
