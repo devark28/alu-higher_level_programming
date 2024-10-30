@@ -2,5 +2,5 @@
 
 
 class Square:
-    '''Square class'''
+    """Square class with no attributes"""
     pass
