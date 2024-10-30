@@ -13,7 +13,7 @@ def list_division(my_list_1, my_list_2, list_length):
                 print("out of range")
             elif e.args[0] == 'division by zero':
                 print("division by 0")
-            else:
+            # else:
                 # print("wrong type")
         finally:
             return result
