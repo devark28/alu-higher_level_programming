@@ -18,8 +18,8 @@ def list_division(my_list_1, my_list_2, list_length):
             result.append(0)
             print("wrong type")
             continue
-        except Exception as e:
+        except RuntimeError as e:
             result.append(0)
             print(e.args)
-        # finally:
-        #     return result
+        finally:
+            return result
