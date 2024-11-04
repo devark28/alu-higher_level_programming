@@ -8,7 +8,7 @@ class Rectangle:
     """
     Rectangle class
     """
-    number_of_instances = 0
+    number_of_instances = 0  # number of instances of Rectangle
     def __init__(self, width=0, height=0):
         """
         initializes the Rectangle class
