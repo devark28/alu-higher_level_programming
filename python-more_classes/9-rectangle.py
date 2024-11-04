@@ -120,5 +120,5 @@ class Rectangle:
         else:
             return rect_2
 
-    def square(self, size=0):
-        return self(size, size)
+    def square(size=0):
+        return Rectangle(size, size)
