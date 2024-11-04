@@ -2,13 +2,13 @@
 """
 an empty Rectangle class
 """
-number_of_instances = 0  # number of instances of Rectangle
 
 
 class Rectangle:
     """
     Rectangle class
     """
+    number_of_instances = 0  # number of instances of Rectangle
     def __init__(self, width=0, height=0):
         """
         initializes the Rectangle class
@@ -23,7 +23,7 @@ class Rectangle:
         if height < 0:
             raise ValueError("height must be >= 0")
         self.__height = height
-        number_of_instances += 1
+        self.number_of_instances += 1
 
     @property
     def width(self):
