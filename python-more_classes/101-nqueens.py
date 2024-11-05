@@ -152,6 +152,7 @@ class QueensChessEngine:
                 point = self.get_queens_positions()[i]
             else:
                 break
+            print(f"Point: {point}")
             for move in self.all_knight_points(point):
                 print(f"Trying to add queen at {move}", end=" ")
                 try:
