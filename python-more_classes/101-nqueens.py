@@ -152,13 +152,13 @@ class QueensChessEngine:
             else:
                 break
             for move in self.all_knight_points(point):
-                print(f"Trying to add queen at {move}", end=" ")
+                # print(f"Trying to add queen at {move}", end=" ")
                 try:
                     self.add_queen(move)
-                    print("Success")
+                    # print("Success")
                     continue
                 except ValueError:
-                    print("Failed")
+                    # print("Failed")
                     continue
             i += 1
 
