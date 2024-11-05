@@ -225,7 +225,7 @@ class Tree:
         print(self.engine)
         print(self.__nodes_pool)
         print()
-        if points is not None and isinstance(points, list) and len(points) == 0:
+        if points is None or isinstance(points, list) and len(points) == 0:
             try:
                 self.engine.add_queen(point)
                 self.add_node(node, point)
