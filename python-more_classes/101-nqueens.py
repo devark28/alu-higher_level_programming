@@ -220,12 +220,12 @@ class Tree:
     def forward(
             self, node: Node,
             point: Point,
-            points: list[Point]
+            points: [Point] = None
     ) -> list[Point]:
         print(self.engine)
         print(self.__nodes_pool)
         print()
-        if isinstance(points, list) and len(points) == 0:
+        if points is not None and isinstance(points, list) and len(points) == 0:
             try:
                 self.engine.add_queen(point)
                 self.add_node(node, point)
@@ -256,7 +256,7 @@ class Tree:
         self.__nodes_pool.remove(node)
         return self.engine.get_queens_positions()
 
-    def solve(self) -> list[Point]:
+    def solve(self) -> [Point]:
         initial_point = Point(0, 1)
         self.engine.add_queen(initial_point)
         self.__root = Node(initial_point)
