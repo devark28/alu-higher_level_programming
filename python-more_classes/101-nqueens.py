@@ -201,4 +201,4 @@ if __name__ == "__main__":
         for y in range(N):
             engine.auto_add_queens(Point(x, y))
             solution.append(engine.get_queens_positions())
-            print(f"{Point(x, y)}:\t{len(engine.get_queens_positions())}")
+            print(f"{Point(x, y)}:\t{len(engine.get_queens_positions())}\n\t{engine.get_queens_positions()}")
