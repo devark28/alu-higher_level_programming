@@ -149,7 +149,8 @@ class QueensChessEngine:
         do = True
         while do or new_point_added:
             do = False
-            for point in points:
+            _points = self.get_queens_positions()
+            for point in _points:
                 for move in self.all_knight_points(point):
                     print(f"Trying to add queen at {move}", end=" ")
                     try:
@@ -161,8 +162,8 @@ class QueensChessEngine:
                         print("Failed")
                         new_point_added = False
                         continue
-            points = self.get_queens_positions()
-            print(f"Points: {points}")
+            _points = self.get_queens_positions()
+            print(f"Points: {_points}")
 
     def __str__(self) -> str:
         return "\n".join([
