@@ -36,9 +36,9 @@ class QueensChessEngine:
         self.__board = [[False for i in range(N)] for j in range(N)]
 
     def add_queen(self, point: Point) -> None:
-        if point.x in range(self.__N):
+        if not point.x in range(self.__N):
             raise ValueError("Row out of bounds")
-        if point.y in range(self.__N):
+        if not point.y in range(self.__N):
             raise ValueError("Col out of bounds")
         if self.__board[point.x][point.y]:
             raise ValueError("Queen already exists in this position")
