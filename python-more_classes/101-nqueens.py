@@ -138,12 +138,8 @@ class QueensChessEngine:
 
     def auto_add_queens(
         self,
-        default_point: Point = Point(0, 0)
+        points: list[Point] = [Point(0, 0)],
         ) -> None:
-        points = self.get_queens_positions()
-        if len(points) == 0:
-            self.add_queen(default_point)
-        points = self.get_queens_positions()
         for point in points:
             for move in self.all_knight_points(point):
                 try:
