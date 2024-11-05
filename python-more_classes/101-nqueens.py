@@ -112,12 +112,12 @@ class QueensChessEngine:
         return [point + move for move in self.__knights_moves]
 
     def get_queens_positions(self) -> list[Point]:
-        return [
+        return list([
             Point(i, j)
             for i in range(self.__N)
             for j in range(self.__N)
             if self.__board[i][j]
-        ]
+        ])
 
     def auto_add_queens(self, default_point: Point = Point(0, 0)) -> None:
         points = self.get_queens_positions()
