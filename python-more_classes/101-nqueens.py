@@ -81,7 +81,6 @@ class QueensChessEngine:
             if self.__board[x][y]:
                 return False
         return True
-            
 
     def is_safe_secondary_diagonal(self, point: Point) -> bool:
         # Get the start and end points of the secondary diagonal
@@ -103,6 +102,14 @@ class QueensChessEngine:
 
     def all_knight_points(self, point: Point) -> list[Point]:
         return [point + move for move in self.__knights_moves]
+
+    def get_queens_positions(self) -> list[Point]:
+        return [
+            Point(i, j)
+            for i in range(self.__N)
+            for j in range(self.__N)
+            if self.__board[i][j]
+        ]
 
 class Node:
     cold = False
@@ -132,6 +139,14 @@ class Tree:
 
     def add_node(self, parent: 'Node', point: Point) -> 'Node':
         pass
+
+    @property
+    def root(self) -> Node:
+        return self.__root
+
+    @property
+    def max_children(self) -> int:
+        return self.__max_children
 
 if __name__ == "__main__":
     argv = sys.argv
