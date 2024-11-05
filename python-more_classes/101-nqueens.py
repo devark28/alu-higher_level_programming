@@ -159,6 +159,7 @@ class QueensChessEngine:
                         continue
                     except ValueError:
                         print("Failed")
+                        new_point_added = False
                         continue
 
     def __str__(self) -> str:
