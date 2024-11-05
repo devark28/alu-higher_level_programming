@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 import sys
 
+
 class Vector:
     def __init__(self, x=0, y=0):
         self.__x = x
@@ -13,6 +14,7 @@ class Vector:
     @property
     def y(self) -> int:
         return self.__y
+
 
 class Point:
     def __init__(self, x: int, y: int):
@@ -29,6 +31,7 @@ class Point:
 
     def __str__(self) -> str:
         return f"Point({self.__x}, {self.__y})"
+
 
 class QueensChessEngine:
     def __init__(self, n):
@@ -63,6 +66,7 @@ class QueensChessEngine:
 
     def get_solutions(self):
         return self.solutions
+
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
