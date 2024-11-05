@@ -63,6 +63,15 @@ class QueensChessEngine:
             raise ValueError("Queen cannot be placed in this position")
         self.__board[point.x][point.y] = True
 
+    def remove_queen(self, point: Point) -> None:
+        if not point.x in range(self.__N):
+            raise ValueError("Row out of bounds")
+        if not point.y in range(self.__N):
+            raise ValueError("Col out of bounds")
+        if not self.__board[point.x][point.y]:
+            raise ValueError("Queen does not exist in this position")
+        self.__board[point.x][point.y] = False
+
     def is_safe(self, point: Point) -> bool:
         if not self.is_safe_row(point.x):
             return False
@@ -188,17 +197,28 @@ class Tree:
     def add_node(self, parent: 'Node', point: Point) -> 'Node':
         self.__nodes_pool.append(Node(point, parent))
 
+    def forward(self, node: Node, point: Point) -> list[Point]:
+        try:
+            self.engine.add_queen(point)
+            self.add_node(node, point)
+            return True
+        except ValueError:
+            # raise ValueError("Queen cannot be placed in this position")
+            return False
+
+    def backward(self, node: Node) -> list[Point]:
+        self.engine.remove_queen(node.point)
+        self.__nodes_pool.remove(node)
+
     def solve(self) -> list[Point]:
-        for x in range(N):
-            for y in range(N):
-                safe_points = self.engine.all_knight_points(
-                    Point(x, y))
-                for point in safe_points:
-                    try:
-                        self.engine.add_queen(point)
-                        self.add_node(self.__root, point)
-                    except ValueError:
-                        continue
+        safe_points = self.engine.all_knight_points(
+            Point(0, 1))
+        for point in safe_points:
+            try:
+                self.engine.add_queen(point)
+                self.add_node(self.__root, point)
+            except ValueError:
+                continue
 
     @property
     def engine(self) -> QueensChessEngine:
