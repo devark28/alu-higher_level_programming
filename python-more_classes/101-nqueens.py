@@ -147,11 +147,9 @@ class QueensChessEngine:
         print(f"Points: {points}")
         i = 0
         while len(points) < self.__N:
-            point = None
             if i < len(points):
                 point = self.get_queens_positions()[i]
             else:
-                print("No more points to add")
                 break
             print(f"Point: {point}")
             for move in self.all_knight_points(point):
