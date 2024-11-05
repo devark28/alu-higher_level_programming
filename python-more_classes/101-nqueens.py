@@ -145,10 +145,13 @@ class QueensChessEngine:
         points = self.get_queens_positions()
         for point in points:
             for move in self.all_knight_points(point):
+                print(f"Trying to add queen at {move}", end=" ")
                 try:
                     self.add_queen(move)
+                    print("Success")
                     break
                 except ValueError:
+                    print("Failed")
                     continue
 
     def __str__(self) -> str:
