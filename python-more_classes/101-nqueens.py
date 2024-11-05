@@ -195,10 +195,9 @@ if __name__ == "__main__":
         exit(1)
 
     # tree = Tree(max_children=8)
+    solution = []
     engine = QueensChessEngine(N)
-    engine.auto_add_queens()
-    print(engine.get_queens_positions())
-    engine.auto_add_queens(Point(1, 0))
-    print(engine.get_queens_positions())
-    engine.auto_add_queens(Point(0, 1))
-    print(engine.get_queens_positions())
+    for x, y in zip(range(N), range(N)):
+        engine.auto_add_queens(Point(x, y))
+        solution.append(engine.get_queens_positions())
+        print(engine.get_queens_positions())
