@@ -1,44 +1,36 @@
+#!/usr/bin/env python3
 import sys
 
-def is_safe(board, row, col, n):
-    # Check this row on the left side
-    for i in range(col):
-        if board[row][i] == 1:
-            return False
+def print_usage():
+    print("Usage: nqueens N")
 
-    # Check upper diagonal on the left side
-    for i, j in zip(range(row, -1, -1), range(col, -1, -1)):
-        if board[i][j] == 1:
-            return False
+def solve_nqueens(n):
+    def is_valid(board, row, col):
+        for i in range(row):
+            if board[i] == col or \
+               board[i] - i == col - row or \
+               board[i] + i == col + row:
+                return False
+        return True
 
-    # Check lower diagonal on the left side
-    for i, j in zip(range(row, n, 1), range(col, -1, -1)):
-        if board[i][j] == 1:
-            return False
-
-    return True
-
-def solve_n_queens(n):
-    board = [[0 for _ in range(n)] for _ in range(n)]
-    solutions = []
-
-    def backtrack(col):
-        if col == n:
-            solutions.append([row.index(1) for row in board])
+    def backtrack(row, board):
+        if row == n:
+            solutions.append([[i, board[i]] for i in range(n)])
             return
+        for col in range(n):
+            if is_valid(board, row, col):
+                board[row] = col
+                backtrack(row + 1, board)
+                board[row] = -1
 
-        for i in range(n):
-            if is_safe(board, i, col, n):
-                board[i][col] = 1
-                backtrack(col + 1)
-                board[i][col] = 0
-
-    backtrack(0)
+    solutions = []
+    board = [-1] * n
+    backtrack(0, board)
     return solutions
 
 def main():
     if len(sys.argv) != 2:
-        print("Usage: nqueens N")
+        print_usage()
         sys.exit(1)
 
     try:
@@ -51,7 +43,7 @@ def main():
         print("N must be at least 4")
         sys.exit(1)
 
-    solutions = solve_n_queens(n)
+    solutions = solve_nqueens(n)
     for solution in solutions:
         print(solution)
 
