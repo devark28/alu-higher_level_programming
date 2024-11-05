@@ -151,6 +151,7 @@ class QueensChessEngine:
                 try:
                     self.add_queen(move)
                     print("Success")
+                    points = self.get_queens_positions()
                     continue
                 except ValueError:
                     print("Failed")
