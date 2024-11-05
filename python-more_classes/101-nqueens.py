@@ -176,22 +176,40 @@ class Node:
     def parent(self) -> 'Node':
         return self.__parent if self.__parent else None
 
-# class Tree:
-#     def __init__(self, max_children):
-#         self.__max_children = max_children
-#         self.__nodes_pool = [Node(Point(0, 0))]
-#         self.__root = self.__nodes_pool[0]
+class Tree:
+    def __init__(self, max_children):
+        self.__max_children = max_children
+        self.__nodes_pool = []
+        # self.__nodes_pool = [Node(Point(0, 0))]
+        # self.__root = self.__nodes_pool[0]
+        self.__engine = QueensChessEngine(max_children)
 
-#     def add_node(self, parent: 'Node', point: Point) -> 'Node':
-#         self.__nodes_pool.append(Node(point, parent))
+    def add_node(self, parent: 'Node', point: Point) -> 'Node':
+        self.__nodes_pool.append(Node(point, parent))
 
-#     @property
-#     def root(self) -> Node:
-#         return self.__root
+    def solve(self) -> list[Point]:
+        for x in range(N):
+            for y in range(N):
+                safe_points = self.engine.all_knight_points(
+                    Point(x, y))
+                for point in safe_points:
+                    try:
+                        self.engine.add_queen(point)
+                        self.add_node(self.__root, point)
+                    except ValueError:
+                        continue
 
-#     @property
-#     def max_children(self) -> int:
-#         return self.__max_children
+    @property
+    def engine(self) -> QueensChessEngine:
+        return self.__engine
+
+    @property
+    def root(self) -> Node:
+        return self.__root
+
+    @property
+    def max_children(self) -> int:
+        return self.__max_children
 
 if __name__ == "__main__":
     argv = sys.argv
@@ -199,7 +217,6 @@ if __name__ == "__main__":
     if argc != 2:
         print("Usage: nqueens N")
         exit(1)
-
     try:
         N = int(argv[1])
         if N < 4:
@@ -209,14 +226,14 @@ if __name__ == "__main__":
         print("N must be a number")
         exit(1)
 
-    # tree = Tree(max_children=8)
-    solution = []
-    engine = QueensChessEngine(N)
-    # for x in range(N):
-    #     for y in range(N):
-    #         engine.auto_add_queens(Point(x, y))
-    #         solution.append(engine.get_queens_positions())
-    #         print(f"{Point(x, y)}: {len(engine.get_queens_positions())}\n\t{engine.get_queens_positions()}")
-    engine.auto_add_queens(Point(0, 1))
-    # print(engine.get_queens_positions())
-    print(engine)
+    tree = Tree(max_children=N)
+    solution = tree.solve()
+    # engine = QueensChessEngine(N)
+    # # for x in range(N):
+    # #     for y in range(N):
+    # #         engine.auto_add_queens(Point(x, y))
+    # #         solution.append(engine.get_queens_positions())
+    # #         print(f"{Point(x, y)}: {len(engine.get_queens_positions())}\n\t{engine.get_queens_positions()}")
+    # engine.auto_add_queens(Point(0, 1))
+    # # print(engine.get_queens_positions())
+    # print(engine)
