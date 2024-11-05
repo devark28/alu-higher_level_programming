@@ -140,17 +140,15 @@ class QueensChessEngine:
         self,
         default_point: Point = Point(0, 0)
         ) -> None:
-        points = self.get_queens_positions()
-        if len(points) == 0:
+        if len(self.get_queens_positions()) == 0:
             self.add_queen(default_point)
-        points = self.get_queens_positions()
-        print(f"Points: {points}")
         i = 0
-        while len(points) < self.__N:
+        while len(self.get_queens_positions()) < self.__N:
             if i < len(self.get_queens_positions()):
                 point = self.get_queens_positions()[i]
             else:
                 break
+            print(f"Points: {self.get_queens_positions()}")
             for move in self.all_knight_points(point):
                 # print(f"Trying to add queen at {move}", end=" ")
                 try:
