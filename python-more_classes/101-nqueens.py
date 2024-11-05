@@ -30,6 +30,12 @@ class Point:
     def get_displacement(self, point: 'Point') -> Vector:
         return Vector(point.__x - self.__x, point.__y - self.__y)
 
+    def __str__(self) -> str:
+        return f"Point({self.__x}, {self.__y})"
+
+    def __eq__(self, point: 'Point') -> bool:
+        return self.__x == point.x and self.__y == point.y
+
     def __add__(self, vector: Vector) -> 'Point':
         return Point(self.__x + vector.x, self.__y + vector.y)
 
@@ -112,12 +118,12 @@ class QueensChessEngine:
         return [point + move for move in self.__knights_moves]
 
     def get_queens_positions(self) -> list[Point]:
-        return list([
+        return [
             Point(i, j)
             for i in range(self.__N)
             for j in range(self.__N)
             if self.__board[i][j]
-        ])
+        ]
 
     def auto_add_queens(self, default_point: Point = Point(0, 0)) -> None:
         points = self.get_queens_positions()
