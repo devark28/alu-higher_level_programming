@@ -149,7 +149,7 @@ class QueensChessEngine:
         while len(points) < self.__N:
             point = None
             if i < len(points):
-                point = points[i]
+                point = self.get_queens_positions()[i]
             else:
                 break
             for move in self.all_knight_points(point):
