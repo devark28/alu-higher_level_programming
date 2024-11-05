@@ -200,4 +200,4 @@ if __name__ == "__main__":
     for x, y in zip(range(N), range(N)):
         engine.auto_add_queens(Point(x, y))
         solution.append(engine.get_queens_positions())
-        print(engine.get_queens_positions())
+        print(f"{Point(x, y)}:\n\t{engine.get_queens_positions()}")
