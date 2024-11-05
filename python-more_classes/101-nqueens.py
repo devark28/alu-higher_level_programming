@@ -142,7 +142,12 @@ class QueensChessEngine:
                     continue
 
     def __str__(self) -> str:
-        return "\n".join([" ".join(["Q" if self.__board[i][j] else "." for j in range(self.__N)]) for i in range(self.__N)])
+        return "\n".join([
+            " ".join([
+                "Q" if self.__board[i][j] else "."
+                for j in range(self.__N)])
+            for i in range(self.__N)
+            ])
 
 class Node:
     cold = False
