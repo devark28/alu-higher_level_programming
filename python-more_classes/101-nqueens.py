@@ -104,6 +104,26 @@ class QueensChessEngine:
     def all_knight_points(self, point: Point) -> list[Point]:
         return [point + move for move in self.__knights_moves]
 
+class Node:
+    cold = False
+
+    def __init__(self, parent: 'Node', point: Point):
+        self.__point = point
+        self.__parent = parent
+        self.__depth = parent.depth + 1
+
+    @property
+    def depth(self) -> int:
+        return self.__depth
+
+    @property
+    def point(self) -> Point:
+        return self.__point
+
+    @property
+    def parent(self) -> 'Node':
+        return self.__parent if self.__parent else None
+
 class Tree:
     def __init__(self, max_children):
         self.__max_children = max_children
@@ -112,13 +132,6 @@ class Tree:
 
     def add_node(self, parent: 'Node', point: Point) -> 'Node':
         pass
-
-class Node:
-    cold = False
-
-    def __init__(self, parent: Point, point: Point):
-        self.__point = point
-        self.__parent = parent
 
 if __name__ == "__main__":
     argv = sys.argv
