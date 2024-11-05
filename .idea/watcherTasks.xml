@@ -2,26 +2,26 @@
 <project version="4">
   <component name="ProjectTasksOptions">
     <TaskOptions isEnabled="true">
-      <option name="arguments" value="exec ${file}" />
+      <option name="arguments" value="&quot;exec $File$ $FileNameWithoutExtension$ $file $fileBasename&quot;" />
       <option name="checkSyntaxErrors" value="true" />
       <option name="description" />
       <option name="exitCodeBehavior" value="ERROR" />
       <option name="fileExtension" value="UNKNOWN" />
       <option name="immediateSync" value="false" />
-      <option name="name" value=".*\/(\\d{1,3})-.*" />
+      <option name="name" value="Run on Save Command" />
       <option name="output" value="" />
       <option name="outputFilters">
         <array />
       </option>
       <option name="outputFromStdout" value="false" />
-      <option name="program" value="alucli" />
+      <option name="program" value="echo" />
       <option name="runOnExternalChanges" value="false" />
-      <option name="scopeName" value="Open Files" />
+      <option name="scopeName" value="Project Files" />
       <option name="trackOnlyRoot" value="false" />
       <option name="workingDir" value="" />
       <envs>
-        <env name="file" value="${file}" />
-        <env name="fileBasename" value="${fileBasename}" />
+        <env name="file" value="$File$" />
+        <env name="fileBasename" value="$FileNameWithoutExtension$" />
       </envs>
     </TaskOptions>
   </component>
