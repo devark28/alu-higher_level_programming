@@ -61,15 +61,16 @@ class Solution:
                 if row == n:
                     if not stack:
                         return solutions
-                    row, col = stack.pop()
-                    board[row][col] = 0
-                    row += 1
+                    stack.pop()
+                    row = stack[-1].x if stack else 0
+                    col = stack[-1].y + 1 if stack else 0
 
                 if col == n:
                     solutions.append([point for point in stack])
-                    row, col = stack.pop()
-                    board[row][col] = 0
-                    row += 1
+                    if stack:
+                        stack.pop()
+                        row = stack[-1].x if stack else 0
+                        col = stack[-1].y + 1 if stack else 0
 
             return solutions
 
