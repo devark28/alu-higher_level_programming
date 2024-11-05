@@ -125,7 +125,8 @@ class QueensChessEngine:
         return [
             point + move
             for move in self.__knights_moves
-            if point.x + move.x in range(self.__N)]
+            if point.x + move.x in range(self.__N)
+            and point.y + move.y in range(self.__N)]
 
     def get_queens_positions(self) -> list[Point]:
         return [
