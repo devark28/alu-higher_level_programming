@@ -99,7 +99,9 @@ class QueensChessEngine:
                 return False
         return True
 
-    def is_safe_secondary_diagonal(self, point: Point) -> bool:
+    def is_safe_secondary_diagonal(
+        self, point: Point
+        ) -> bool:
         # Get the start and end points of the secondary diagonal
         start_point = Point(
             point.x - min(point.x, self.__N - 1 - point.y),
@@ -117,8 +119,13 @@ class QueensChessEngine:
                 return False
         return True
 
-    def all_knight_points(self, point: Point) -> list[Point]:
-        return [point + move for move in self.__knights_moves]
+    def all_knight_points(
+        self, point: Point
+        ) -> list[Point]:
+        return [
+            point + move
+            for move in self.__knights_moves
+            if point.x + move.x in range(self.__N)]
 
     def get_queens_positions(self) -> list[Point]:
         return [
@@ -128,7 +135,10 @@ class QueensChessEngine:
             if self.__board[i][j]
         ]
 
-    def auto_add_queens(self, default_point: Point = Point(0, 0)) -> None:
+    def auto_add_queens(
+        self,
+        default_point: Point = Point(0, 0)
+        ) -> None:
         points = self.get_queens_positions()
         if len(points) == 0:
             self.add_queen(default_point)
