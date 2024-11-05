@@ -36,16 +36,15 @@ class QueensChessEngine:
         self.__board = [[False for i in range(N)] for j in range(N)]
 
     def add_queen(self, point: Point) -> None:
-        row, col = point.x, point.y
-        if row in range(self.__N):
+        if point.x in range(self.__N):
             raise ValueError("Row out of bounds")
-        if col in range(self.__N):
+        if point.y in range(self.__N):
             raise ValueError("Col out of bounds")
-        if self.__board[row][col]:
+        if self.__board[point.x][point.y]:
             raise ValueError("Queen already exists in this position")
-        if not self.is_safe(row, col):
+        if not self.is_safe(point):
             raise ValueError("Queen cannot be placed in this position")
-        self.__board[row][col] = True
+        self.__board[point.x][point.y] = True
 
     def is_safe(self, point: Point) -> bool:
         if not self.is_safe_row(point.x):
