@@ -120,13 +120,14 @@ class QueensChessEngine:
             for move in self.all_knight_points(point):
                 try:
                     self.add_queen(move)
+                    break
                 except ValueError:
                     continue
 
 class Node:
     cold = False
 
-    def __init__(self, parent: 'Node', point: Point):
+    def __init__(self, point: Point, parent: 'Node' = None):
         self.__point = point
         self.__parent = parent
         self.__depth = parent.depth + 1
@@ -150,7 +151,7 @@ class Tree:
         self.__root = self.__nodes_pool[0]
 
     def add_node(self, parent: 'Node', point: Point) -> 'Node':
-        pass
+        self.__nodes_pool.append(Node(point, parent))
 
     @property
     def root(self) -> Node:
