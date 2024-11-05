@@ -33,6 +33,9 @@ class Point:
     def __str__(self) -> str:
         return f"Point({self.__x}, {self.__y})"
 
+    def __repr__(self) -> str:
+        return f"Point({self.__x}, {self.__y})"
+
     def __eq__(self, point: 'Point') -> bool:
         return self.__x == point.x and self.__y == point.y
 
