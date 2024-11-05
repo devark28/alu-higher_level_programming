@@ -145,7 +145,7 @@ class QueensChessEngine:
             self.add_queen(default_point)
         points = self.get_queens_positions()
         print(f"Points: {points}")
-        for point in self.get_queens_positions():
+        for point in points:
             for move in self.all_knight_points(point):
                 print(f"Trying to add queen at {move}", end=" ")
                 try:
