@@ -150,6 +150,7 @@ class QueensChessEngine:
         while do or new_point_added:
             do = False
             for point in points:
+                print(f"Points: {points}")
                 for move in self.all_knight_points(point):
                     print(f"Trying to add queen at {move}", end=" ")
                     try:
