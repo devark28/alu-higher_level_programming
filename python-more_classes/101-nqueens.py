@@ -94,41 +94,28 @@ class QueensChessEngine:
 
     def is_safe_main_diagonal(self, point: Point) -> bool:
         # Get the start and end points of the main diagonal
-        start_point = Point(
-            point.x - min(point.x, point.y),
-            point.y - min(point.x, point.y)
-        )
-        n = self.__N - 1
-        end_point = Point(
-            point.x + min(n - point.x, n - point.y),
-            point.y + min(n - point.x, n - point.y)
-        )
-        for x, y in zip(
-                range(start_point.x, end_point.x + 1),
-                range(start_point.y, end_point.y + 1)
-        ):
-            if self.__board[x][y]:
-                return False
+        start_x = point.x - min(point.x, point.y)
+        start_y = point.y - min(point.x, point.y)
+        end_x = point.x + min(self.__N - 1 - point.x, self.__N - 1 - point.y)
+        end_y = point.y + min(self.__N - 1 - point.x, self.__N - 1 - point.y)
+
+        for x in range(start_x, end_x + 1):
+            for y in range(start_y, end_y + 1):
+                if 0 <= x < self.__N and 0 <= y < self.__N and self.__board[x][y]:
+                    return False
         return True
 
-    def is_safe_secondary_diagonal(
-            self, point: Point
-    ) -> bool:
+    def is_safe_secondary_diagonal(self, point: Point) -> bool:
         # Get the start and end points of the secondary diagonal
-        start_point = Point(
-            point.x - min(point.x, self.__N - 1 - point.y),
-            point.y + min(point.x, self.__N - 1 - point.y)
-        )
-        end_point = Point(
-            point.x + min(self.__N - 1 - point.x, point.y),
-            point.y - min(self.__N - 1 - point.x, point.y)
-        )
-        for x, y in zip(
-                range(start_point.x, end_point.x + 1),
-                range(start_point.y, end_point.y - 1, -1)
-        ):
-            if self.__board[x][y]:
-                return False
+        start_x = point.x - min(point.x, self.__N - 1 - point.y)
+        start_y = point.y + min(point.x, self.__N - 1 - point.y)
+        end_x = point.x + min(self.__N - 1 - point.x, point.y)
+        end_y = point.y - min(self.__N - 1 - point.x, point.y)
+
+        for x in range(start_x, end_x + 1):
+            for y in range(start_y, end_y - 1, -1):
+                if 0 <= x < self.__N and 0 <= y < self.__N and self.__board[x][y]:
+                    return False
         return True
 
     def all_knight_points(
