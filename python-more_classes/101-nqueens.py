@@ -181,6 +181,7 @@ class Tree:
         self.__max_children = max_children
         self.__nodes_pool = []
         # self.__nodes_pool = [Node(Point(0, 0))]
+        self.__root = None
         # self.__root = self.__nodes_pool[0]
         self.__engine = QueensChessEngine(max_children)
 
