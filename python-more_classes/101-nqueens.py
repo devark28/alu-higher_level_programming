@@ -197,8 +197,10 @@ if __name__ == "__main__":
     # tree = Tree(max_children=8)
     solution = []
     engine = QueensChessEngine(N)
-    for x in range(N):
-        for y in range(N):
-            engine.auto_add_queens(Point(x, y))
-            solution.append(engine.get_queens_positions())
-            print(f"{Point(x, y)}: {len(engine.get_queens_positions())}\n\t{engine.get_queens_positions()}")
+    # for x in range(N):
+    #     for y in range(N):
+    #         engine.auto_add_queens(Point(x, y))
+    #         solution.append(engine.get_queens_positions())
+    #         print(f"{Point(x, y)}: {len(engine.get_queens_positions())}\n\t{engine.get_queens_positions()}")
+    engine.auto_add_queens(Point(0, 1))
+    print(engine.get_queens_positions())
