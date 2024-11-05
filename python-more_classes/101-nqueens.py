@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 import sys
 
+
 class Vector:
     def __init__(self, x=0, y=0):
         self.__x = x
@@ -13,6 +14,7 @@ class Vector:
     @property
     def y(self) -> int:
         return self.__y
+
 
 class Point:
     def __init__(self, x: int, y: int):
@@ -41,6 +43,7 @@ class Point:
 
     def __add__(self, vector: Vector) -> 'Point':
         return Point(self.__x + vector.x, self.__y + vector.y)
+
 
 class QueensChessEngine:
     __knights_moves = [
@@ -101,16 +104,16 @@ class QueensChessEngine:
             point.y + min(N - point.x, N - point.y)
         )
         for x, y in zip(
-            range(start_point.x, end_point.x + 1),
-            range(start_point.y, end_point.y + 1)
-            ):
+                range(start_point.x, end_point.x + 1),
+                range(start_point.y, end_point.y + 1)
+        ):
             if self.__board[x][y]:
                 return False
         return True
 
     def is_safe_secondary_diagonal(
-        self, point: Point
-        ) -> bool:
+            self, point: Point
+    ) -> bool:
         # Get the start and end points of the secondary diagonal
         start_point = Point(
             point.x - min(point.x, self.__N - 1 - point.y),
@@ -121,16 +124,16 @@ class QueensChessEngine:
             point.y - min(self.__N - 1 - point.x, point.y)
         )
         for x, y in zip(
-            range(start_point.x, end_point.x + 1),
-            range(start_point.y, end_point.y - 1, -1)
-            ):
+                range(start_point.x, end_point.x + 1),
+                range(start_point.y, end_point.y - 1, -1)
+        ):
             if self.__board[x][y]:
                 return False
         return True
 
     def all_knight_points(
-        self, point: Point
-        ) -> list[Point]:
+            self, point: Point
+    ) -> list[Point]:
         return [
             point + move
             for move in self.__knights_moves
@@ -151,12 +154,12 @@ class QueensChessEngine:
                 "Q" if self.__board[i][j] else "."
                 for j in range(self.__N)])
             for i in range(self.__N)
-            ])
+        ])
 
     def auto_add_queens(
-        self,
-        points: list[Point] = [Point(0, 0)],
-        ) -> None:
+            self,
+            points: list[Point]
+    ) -> None:
         for point in points:
             for move in self.all_knight_points(point):
                 try:
@@ -165,13 +168,17 @@ class QueensChessEngine:
                 except ValueError:
                     continue
 
+
 class Node:
     cold = False
 
     def __init__(self, point: Point, parent: 'Node' = None):
         self.__point = point
         self.__parent = parent
-        self.__depth = parent.depth + 1
+        if parent is None:
+            self.__depth = 0
+        else:
+            self.__depth = parent.depth + 1
 
     @property
     def depth(self) -> int:
@@ -185,6 +192,7 @@ class Node:
     def parent(self) -> 'Node':
         return self.__parent if self.__parent else None
 
+
 class Tree:
     def __init__(self, max_children):
         self.__max_children = max_children
@@ -194,18 +202,30 @@ class Tree:
         # self.__root = self.__nodes_pool[0]
         self.__engine = QueensChessEngine(max_children)
 
-    def add_node(self, parent: 'Node', point: Point) -> 'Node':
+    @property
+    def engine(self) -> QueensChessEngine:
+        return self.__engine
+
+    @property
+    def root(self) -> Node:
+        return self.__root
+
+    @property
+    def max_children(self) -> int:
+        return self.__max_children
+
+    def add_node(self, parent: Node | None, point: Point):
         self.__nodes_pool.append(Node(point, parent))
 
     def forward(
-        self, node: Node,
-        point: Point,
-        points: list[Point] = []
-        ) -> list[Point]:
+            self, node: Node,
+            point: Point,
+            points: list[Point]
+    ) -> list[Point]:
         print(self.engine)
         print(self.__nodes_pool)
         print()
-        if len(points) == 0:
+        if isinstance(points, list) and len(points) == 0:
             try:
                 self.engine.add_queen(point)
                 self.add_node(node, point)
@@ -241,7 +261,7 @@ class Tree:
         self.engine.add_queen(initial_point)
         self.__root = Node(initial_point)
         self.add_node(None, initial_point)
-        
+
         safe_points = self.engine.all_knight_points(
             initial_point)
         for point in safe_points:
@@ -255,21 +275,6 @@ class Tree:
             # print(self.__nodes_pool)
             # print()
 
-    def foo(point: Point):
-        pass
-        
-
-    @property
-    def engine(self) -> QueensChessEngine:
-        return self.__engine
-
-    @property
-    def root(self) -> Node:
-        return self.__root
-
-    @property
-    def max_children(self) -> int:
-        return self.__max_children
 
 if __name__ == "__main__":
     argv = sys.argv
