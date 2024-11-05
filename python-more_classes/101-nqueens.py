@@ -149,7 +149,7 @@ class QueensChessEngine:
                 try:
                     self.add_queen(move)
                     print("Success")
-                    break
+                    continue
                 except ValueError:
                     print("Failed")
                     continue
