@@ -151,6 +151,7 @@ class QueensChessEngine:
             if i < len(points):
                 point = self.get_queens_positions()[i]
             else:
+                print("No more points to add")
                 break
             print(f"Point: {point}")
             for move in self.all_knight_points(point):
