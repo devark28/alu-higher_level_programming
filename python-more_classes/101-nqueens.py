@@ -72,6 +72,9 @@ class Solution:
                         row = stack[-1].x if stack else 0
                         col = stack[-1].y + 1 if stack else 0
 
+            print(solutions)
+            print(board)
+
             return solutions
 
         return solve_n_queens(n)
