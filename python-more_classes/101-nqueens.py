@@ -51,9 +51,9 @@ class QueensChessEngine:
         Vector(1, 2), Vector(1, -2), Vector(-1, 2), Vector(-1, -2)
     ]
 
-    def __init__(self, N):
-        self.__N = N
-        self.__board = [[False for i in range(N)] for j in range(N)]
+    def __init__(self, n):
+        self.__N = n
+        self.__board = [[False for _ in range(n)] for _ in range(n)]
 
     def add_queen(self, point: Point) -> None:
         if not point.x in range(self.__N):
@@ -98,10 +98,10 @@ class QueensChessEngine:
             point.x - min(point.x, point.y),
             point.y - min(point.x, point.y)
         )
-        N = self.__N - 1
+        n = self.__N - 1
         end_point = Point(
-            point.x + min(N - point.x, N - point.y),
-            point.y + min(N - point.x, N - point.y)
+            point.x + min(n - point.x, n - point.y),
+            point.y + min(n - point.x, n - point.y)
         )
         for x, y in zip(
                 range(start_point.x, end_point.x + 1),
@@ -217,63 +217,44 @@ class Tree:
     def add_node(self, parent: Node | None, point: Point):
         self.__nodes_pool.append(Node(point, parent))
 
-    def forward(
-            self, node: Node,
-            point: Point,
-            points: [Point] = None
-    ) -> list[Point]:
-        print(self.engine)
-        print(self.__nodes_pool)
-        print()
-        if points is None or isinstance(points, list) and len(points) == 0:
-            try:
-                self.engine.add_queen(point)
-                self.add_node(node, point)
-                return self.forward(
-                    self.__nodes_pool[-1],
-                    point,
-                    self.engine.get_queens_positions())
-            except ValueError:
-                # raise ValueError("Queen cannot be placed in this position")
-                return []
-        else:
-            safe_points = self.engine.all_knight_points(point)
-            for safe_point in safe_points:
-                try:
-                    self.engine.add_queen(safe_point)
-                    self.add_node(self.__nodes_pool[-1], safe_point)
-                    return self.forward(
-                        self.__nodes_pool[-1],
-                        point,
-                        self.engine.get_queens_positions())
-                except ValueError:
-                    self.backward(self.__nodes_pool[-1])
-                    self.__nodes_pool[-1].cold = True
-                    continue
+    def forward(self, node: Node, point: Point) -> bool:
+        try:
+            self.engine.add_queen(point)
+            node = Node(point, node)
+            self.__nodes_pool.append(node)
 
-    def backward(self, node: Node) -> list[Point]:
+            if len(self.__nodes_pool) == self.__max_children:
+                return True
+
+            for safe_point in self.engine.all_knight_points(point):
+                if self.forward(node, safe_point):
+                    return True
+
+            self.backward()
+            return False
+        except ValueError:
+            self.backward()
+            return False
+
+    def backward(self) -> list[Point]:
+        if not self.__nodes_pool:
+            return []
+
+        node = self.__nodes_pool.pop()
         self.engine.remove_queen(node.point)
-        self.__nodes_pool.remove(node)
         return self.engine.get_queens_positions()
 
-    def solve(self) -> [Point]:
+    def solve(self) -> bool:
         initial_point = Point(0, 1)
         self.engine.add_queen(initial_point)
         self.__root = Node(initial_point)
-        self.add_node(None, initial_point)
+        self.__nodes_pool.append(self.__root)
 
-        safe_points = self.engine.all_knight_points(
-            initial_point)
-        for point in safe_points:
-            self.add_node(self.__root, point)
-            self.forward(self.__root, point)
-            print(self.engine)
-            print(self.__nodes_pool)
-            print()
-            # self.backward(self.__nodes_pool[-1])
-            # print(self.engine)
-            # print(self.__nodes_pool)
-            # print()
+        for safe_point in self.engine.all_knight_points(initial_point):
+            if self.forward(self.__root, safe_point):
+                return True
+
+        return False
 
 
 if __name__ == "__main__":
@@ -292,13 +273,7 @@ if __name__ == "__main__":
         exit(1)
 
     tree = Tree(max_children=N)
-    solution = tree.solve()
-    # engine = QueensChessEngine(N)
-    # # for x in range(N):
-    # #     for y in range(N):
-    # #         engine.auto_add_queens(Point(x, y))
-    # #         solution.append(engine.get_queens_positions())
-    # #         print(f"{Point(x, y)}: {len(engine.get_queens_positions())}\n\t{engine.get_queens_positions()}")
-    # engine.auto_add_queens(Point(0, 1))
-    # # print(engine.get_queens_positions())
-    # print(engine)
+    if tree.solve():
+        print(tree.engine)
+    else:
+        print("No solution found")
