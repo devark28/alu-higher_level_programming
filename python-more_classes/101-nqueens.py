@@ -1,8 +1,10 @@
 #!/usr/bin/python3
 import sys
 
+
 def print_usage():
     print("Usage: nqueens N")
+
 
 def solve_nqueens(n):
     def is_valid(board, row, col):
@@ -27,6 +29,7 @@ def solve_nqueens(n):
     board = [-1] * n
     backtrack(0, board)
     return solutions
+
 
 def main():
     if len(sys.argv) != 2:
