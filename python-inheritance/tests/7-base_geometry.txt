@@ -1,0 +1,4 @@
+Testing "7-my_list" module
+>>> MyList = __import__('7-my_list').MyList
+
+
