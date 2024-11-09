@@ -22,22 +22,7 @@ Correct output - case: class creation, append, regular print and sorted print
 Correct output - case: class creation, multiple appends, regular print and sorted print
 """
 
-
-class MyList:
-    """MyList class that inherits from list"""
-
-    def __str__(self):
-        """Return the list"""
-        return str(list(self))
-
-    def append(self, value):
-        """Append a value to the list"""
-        super().append(value)
-
-    def print_sorted(self):
-        """Print the list sorted"""
-        print(sorted(self))
-
+MyList = __import__('1-my_list').MyList
 
 if __name__ == "__main__":
     my_list = MyList()
