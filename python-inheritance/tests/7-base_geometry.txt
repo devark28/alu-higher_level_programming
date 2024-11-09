@@ -1,4 +1,4 @@
-Testing "7-my_list" module
->>> MyList = __import__('7-my_list').MyList
+Testing "7-base_geometry.py" module
+>>> MyList = __import__('7-base_geometry.py').MyList
 
 
