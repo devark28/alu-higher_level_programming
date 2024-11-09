@@ -1,104 +1,14 @@
-"""
-This is a test file for the MyList class
-
-tests should be executed by using this command: `python3 -m doctest ./tests/*`
-"""
-
-"""Tests for MyList class
-Regular tests passed
-Test present: check instantiation
-Test present: check inherits from list
-Test present: check __str__
-Test present: check append()
-Test present: check print_sorted() with sorted append
-Test present: check print_sorted() with not sorted append
-Test present: check print_sorted() with no sorted append with negative number
-Test present: check print_sorted() with empty list
-Test present: check print_sorted() returns a new list
-Correct output - case: class creation
-Correct output - case: class creation and regular print
-Correct output - case: class creation, append and regular print
-Correct output - case: class creation, append, regular print and sorted print
-Correct output - case: class creation, multiple appends, regular print and sorted print
-"""
-
+# Testing "1-my_list" module
 MyList = __import__('1-my_list').MyList
 
-if __name__ == "__main__":
-    my_list = MyList()
-    my_list.append(1)
-    my_list.append(4)
-    my_list.append(2)
-    my_list.append(3)
-    print(my_list)
-    my_list.print_sorted()
-    my_list.append(-1)
-    my_list.print_sorted()
-    my_list.append(0)
-    my_list.print_sorted()
-    my_list.append(-2)
-    my_list.print_sorted()
-    my_list.append(5)
-    my_list.print_sorted()
-    my_list.append(6)
-    my_list.print_sorted()
-    my_list.append(7)
-    my_list.print_sorted()
-    my_list.append(8)
-    my_list.print_sorted()
-    my_list.append(9)
-    my_list.print_sorted()
-    my_list.append(10)
-    my_list.print_sorted()
-    my_list.append(11)
-    my_list.print_sorted()
-    my_list.append(12)
-    my_list.print_sorted()
-    my_list.append(13)
-    my_list.print_sorted()
-    my_list.append(14)
-    my_list.print_sorted()
-    my_list.append(15)
-    my_list.print_sorted()
-    my_list.append(16)
-    my_list.print_sorted()
-    my_list.append(17)
-    my_list.print_sorted()
-    my_list.append(18)
-    my_list.print_sorted()
-    my_list.append(19)
-    my_list.print_sorted()
-    my_list.append(20)
-    my_list.print_sorted()
-    my_list.append(21)
-    my_list.print_sorted()
-    my_list.append(22)
-    my_list.print_sorted()
-    my_list.append(23)
-    my_list.print_sorted()
-    my_list.append(24)
-    my_list.print_sorted()
-    my_list.append(25)
-    my_list.print_sorted()
-    my_list.append(26)
-    my_list.print_sorted()
-    my_list.append(27)
-    my_list.print_sorted()
-    my_list.append(28)
-    my_list.print_sorted()
-    my_list.append(29)
-    my_list.print_sorted()
-    my_list.append(30)
-    my_list.print_sorted()
-    my_list.append(31)
-    my_list.print_sorted()
-    my_list.append(32)
-    my_list.print_sorted()
-    my_list.append(33)
-    my_list.print_sorted()
-    my_list.append(34)
-    my_list.print_sorted()
-    my_list.append(35)
-    my_list.print_sorted()
-    my_list.append(36)
-    my_list.print_sorted
+my_list = MyList()
+my_list.append(1)
+my_list.append(4)
+my_list.append(2)
+my_list.append(3)
+my_list.append(5)
+
+# print_sorted() method
+print(my_list)
+my_list.print_sorted()
+print(my_list)
