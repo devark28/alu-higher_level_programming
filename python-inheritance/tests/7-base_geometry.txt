@@ -33,7 +33,11 @@ test for integer_validator(“age”, 1)
 >>> bg.integer_validator("age", 1)
 
 test for integer_validator(“age”, 0)
->>> bg.integer_validator("age", 0)
+>>> try:
+...     bg.integer_validator("age", 0)
+... except Exception as e:
+...     print(e)
+age must be greater than 0
 
 test for integer_validator(“age”, -4)
 >>> bg.integer_validator("age", -4)
