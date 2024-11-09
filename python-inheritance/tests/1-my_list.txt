@@ -1,14 +1,17 @@
-# Testing "1-my_list" module
+Testing "1-my_list" module
 >>> MyList = __import__('1-my_list').MyList
 
-# positive integers
+
+positive integers
 >>> my_list = MyList()
 >>> my_list.append(1)
 >>> my_list.append(4)
 >>> my_list.append(2)
 >>> my_list.append(3)
 >>> my_list.append(5)
-# print_sorted() method
+
+
+print_sorted() method
 >>> print(my_list)
 [1, 4, 2, 3, 5]
 >>> my_list.print_sorted()
@@ -16,13 +19,17 @@
 >>> print(my_list)
 [1, 4, 2, 3, 5]
 
-# negative integers
+
+negative integers
 >>> my_list = MyList()
 >>> my_list.append(-1)
 >>> my_list.append(-4)
 >>> my_list.append(-2)
 >>> my_list.append(-3)
 >>> my_list.append(5)
+
+
+print_sorted() method
 >>> print(my_list)
 [-1, -4, -2, -3, 5]
 >>> my_list.print_sorted()
