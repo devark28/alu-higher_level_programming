@@ -1,0 +1,32 @@
+import unittest
+
+MyList = __import__('1-my_list').MyList
+
+
+class TestMyList(unittest.TestCase):
+    """Test MyList class"""
+
+    def test_sorted(self):
+        """Test print_sorted method"""
+        my_list = MyList([1, 3, 2, 4])
+        self.assertEqual(my_list.print_sorted(), [1, 2, 3, 4])
+
+    def test_sorted_str(self):
+        """Test print_sorted method with strings"""
+        my_list = MyList(["Hello", "World", "Holberton", "School"])
+        self.assertEqual(my_list.print_sorted(), ["Hello", "Holberton", "School", "World"])
+
+    def test_sorted_int_float(self):
+        """Test print_sorted method with mixed ints and floats"""
+        my_list = MyList([1, 3, 2, 4, 1.1, 3.3, 2.2, 4.4])
+        self.assertEqual(my_list.print_sorted(), [1, 1.1, 2, 2.2, 3, 3.3, 4, 4.4])
+
+    def test_sorted_empty(self):
+        """Test print_sorted method with empty list"""
+        my_list = MyList([])
+        self.assertEqual(my_list.print_sorted(), [])
+
+    def test_sorted_one(self):
+        """Test print_sorted method with one element"""
+        my_list = MyList([1])
+        self.assertEqual(my_list.print_sorted(), [1])
