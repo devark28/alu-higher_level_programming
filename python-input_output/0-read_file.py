@@ -3,7 +3,7 @@
 def read_file(filename=""):
     """Read a text file and print it to stdout."""
     try:
-        with open("UTF8", "r") as f:
+        with open(filename, "r") as f:
             print(f.read(), end="")
     except FileNotFoundError:
         pass
