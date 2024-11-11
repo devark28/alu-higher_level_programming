@@ -9,5 +9,5 @@ def read_file(filename=""):
             print(f.read(), end="")
     # except FileNotFoundError:
     #     pass
-    # except PermissionError:
-    #     pass
+    except PermissionError:
+        pass
