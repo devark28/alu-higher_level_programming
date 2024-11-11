@@ -7,7 +7,7 @@ def read_file(filename=""):
     try:
         with open(filename, "r") as f:
             print(f.read(), end="")
-    except FileNotFoundError:
-        pass
-    except PermissionError:
-        pass
+    # except FileNotFoundError:
+    #     pass
+    # except PermissionError:
+    #     pass
