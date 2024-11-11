@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+"""Read a text file and print it to stdout."""
+
 
 def read_file(filename=""):
     """Read a text file and print it to stdout."""
