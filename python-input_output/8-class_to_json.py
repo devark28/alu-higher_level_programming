@@ -7,5 +7,5 @@ def class_to_json(obj):
     props = dir(obj)
     dict_property = {}
     for p in props:
-        dict_property[p] = obj[p]
+        dict_property[p] = obj.__getattribute__(p)
     return dict_property
