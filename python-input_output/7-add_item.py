@@ -9,4 +9,4 @@ if __name__ == "__main__":
     args = sys.argv[1:]
     data = load_from_json_file("add_item.json")
     data = data + args
-    save_to_json_file("add_item.json")
+    save_to_json_file(data, "add_item.json")
