@@ -7,5 +7,7 @@ def class_to_json(obj):
     props = dir(obj)
     dict_property = {}
     for p in props:
-        dict_property[p] = obj.__getattribute__(p)
+        attr = getattr(obj, p)
+        if not callable(attr) and not p.startswith("__"):
+            dict_property[p] = attr
     return dict_property
