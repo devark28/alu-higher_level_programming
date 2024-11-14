@@ -7,6 +7,7 @@ def pascal_triangle(n):
     if n <= 0:
         return []
     # result = []
+    print([1])
     for i in range(n):
         res = [1]
         for j in range(i):
