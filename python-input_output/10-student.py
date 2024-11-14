@@ -8,9 +8,9 @@ def class_to_json(obj, attrs=None):
     dict_property = {}
     for p in props:
         attr = getattr(obj, p)
-        if (not callable(attr)
-                and not p.startswith("__")
-                and (attrs is None or p in attrs)):
+        if (not callable(attr) and
+                not p.startswith("__") and
+                (attrs is None or p in attrs)):
             dict_property[p] = attr
     return dict_property
 
