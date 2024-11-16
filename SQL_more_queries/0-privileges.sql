@@ -7,6 +7,6 @@ REVOKE
     PASSWORDLESS_USER_ADMIN,
     SENSITIVE_VARIABLES_OBSERVER,
     TELEMETRY_LOG_ADMIN
-    FROM 'user_0d_1'@'localhost', 'user_0d_2'@'localhost';
+    ON *.* FROM 'user_0d_1'@'localhost', 'user_0d_2'@'localhost';
 SHOW GRANTS FOR 'user_0d_1'@'localhost';
 SHOW GRANTS FOR 'user_0d_2'@'localhost';
