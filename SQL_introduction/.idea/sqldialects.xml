@@ -4,5 +4,6 @@
     <file url="file://$PROJECT_DIR$/0-list_databases.sql" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/1-create_database_if_missing.sql" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/2-remove_database.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/3-list_tables.sql" dialect="MySQL" />
   </component>
 </project>
