@@ -1,4 +1,2 @@
 -- Describe the first_table table without DESCRIBE or EXPLAIN
-SELECT COLUMN_NAME, COLUMN_TYPE, IS_NULLABLE, COLUMN_DEFAULT, COLUMN_KEY, EXTRA
-FROM information_schema.COLUMNS
-WHERE TABLE_NAME = 'first_table';
+SHOW CREATE TABLE first_table;
