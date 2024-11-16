@@ -1,5 +1,5 @@
 --
-SELECT DISTINCT tv_genres.name as genre, (
+SELECT DISTINCT tv_genres.name AS genre, (
     SELECT COUNT(*)
     FROM tv_show_genres
     WHERE tv_genres.id = tv_show_genres.genre_id
