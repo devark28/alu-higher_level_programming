@@ -1,3 +1,3 @@
 #!/bin/bash
-# This script sends a request to a URL passed as an argument, and displays the body of the response.
-curl -sX OPTIONS "$1" -i | awk '/Allow/ {print $2}'
+# This script shows all http methods the server will accept.
+curl -sI "$1" | grep "Allow" | cut -d " " -f2-
