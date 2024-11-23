@@ -10,5 +10,5 @@ if __name__ == "__main__":
     url = argv[1]
     email = argv[2]
     data = {"email": email}
-    with requests.post(url, data=data) as response:
-        print(response.content.decode("utf-8"))
+    response = requests.post(url, data=data)
+    print(response.text)
