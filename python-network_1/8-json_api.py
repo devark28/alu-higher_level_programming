@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-takes letter, sends POST request with letter, displays body of response
+takes letter, sends POST request with letter,
+displays body of response
 """
 from sys import argv
 
