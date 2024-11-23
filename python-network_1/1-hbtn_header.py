@@ -2,8 +2,10 @@
 """
 extract the response header value of X-Request-Id
 """
+from sys import argv
 from urllib import request
 
 if __name__ == "__main__":
-    with request.urlopen("https://intranet.hbtn.io/status") as response:
+    url = argv[1]
+    with request.urlopen(url) as response:
         print(response.info().get("X-Request-Id"))
