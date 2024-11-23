@@ -8,6 +8,9 @@ from sys import argv
 from requests import JSONDecodeError, post
 
 if __name__ == "__main__":
+    """
+    takes letter, sends POST request with letter,
+    """
     url = "http://0.0.0.0:5000/search_user"
     letter = ""
     if len(argv) > 1:
