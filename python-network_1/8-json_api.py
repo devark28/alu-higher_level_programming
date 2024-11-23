@@ -4,7 +4,7 @@ takes letter, sends POST request with letter, displays body of response
 """
 from sys import argv
 
-from requests import JSONDecodeError, post
+from requests import post
 
 if __name__ == "__main__":
     url = "http://0.0.0.0:5000/search_user"
@@ -19,9 +19,9 @@ if __name__ == "__main__":
         If the JSON is empty, print No result
         """
         json = response.json()
-        if json:
-            print("[{}] {}".format(json.get("id"), json.get("name")))
-        else:
+        if not json:
             print("No result")
-    except JSONDecodeError:
+        else:
+            print("[{}] {}".format(json.get("id"), json.get("name")))
+    except:
         print("Not a valid JSON")
