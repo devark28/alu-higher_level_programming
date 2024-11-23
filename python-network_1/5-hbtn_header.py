@@ -3,9 +3,10 @@
 takes URL, sends request, displays X-Request-Id header
 """
 from sys import argv
-from urllib import request
+
+import requests
 
 if __name__ == "__main__":
     url = argv[1]
-    with request.urlopen(url) as response:
-        print(response.info().get("X-Request-Id"))
+    with requests.get(url) as response:
+        print(response.headers.get("X-Request-Id"))
