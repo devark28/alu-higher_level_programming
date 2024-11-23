@@ -2,11 +2,11 @@
 """
 fetches https://intranet.hbtn.io/status
 """
-from urllib import request
+import requests
 
 if __name__ == "__main__":
     url = "https://intranet.hbtn.io/status"
-    with request.urlopen(url) as response:
+    with requests.get(url) as response:
         print("Body response:")
-        print("\t- type:", type(response.read()))
-        print("\t- content:", response.read())
+        print("\t- type:", type(response.content))
+        print("\t- content:", response.content.decode("utf-8"))
