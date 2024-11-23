@@ -4,8 +4,7 @@ takes letter, sends POST request with letter, displays body of response
 """
 from sys import argv
 
-import requests
-from requests import JSONDecodeError
+from requests import JSONDecodeError, post
 
 if __name__ == "__main__":
     url = "http://0.0.0.0:5000/search_user"
@@ -13,7 +12,7 @@ if __name__ == "__main__":
     if len(argv) > 1:
         letter = argv[1]
     data = {"q": letter}
-    response = requests.post(url, data=data)
+    response = post(url, data=data)
 
     try:
         json = response.json()
