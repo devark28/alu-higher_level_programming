@@ -6,7 +6,7 @@ Lorem ipsum.
 <BLANKLINE>
 Dolor sit amet?
 <BLANKLINE>
->>> text_indentation("    Hohoho, merry Christmas."
+>>> text_indentation("    Hohoho, merry Christmas.")
 Hohoho, merry Christmas.
 <BLANKLINE>
 >>> text_indentation("    Hohoho, merry Christmas.    ")
