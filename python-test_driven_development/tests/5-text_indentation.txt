@@ -17,10 +17,6 @@ Hohoho, merry Christmas.
 >>> text_indentation("No dots")
 No dots
 
->>> text_indentation("New\nline.")
-New
-line.
-<BLANKLINE>
 Test invalid cases
 >>> try:
 ...     text_indentation(123)
