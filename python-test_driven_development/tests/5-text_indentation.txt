@@ -19,7 +19,7 @@ No dots
 
 >>> text_indentation("New\nline.")
 New
-line
+line.
 <BLANKLINE>
 Test invalid cases
 >>> try:
