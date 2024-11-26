@@ -3,15 +3,15 @@
 Test valid cases
 >>> text_indentation("Lorem ipsum. Dolor sit amet?")
 Lorem ipsum.
-
+<BLANKLINE>
 Dolor sit amet?
-
+<BLANKLINE>
 >>> text_indentation("    Hohoho, merry Christmas."
 Hohoho, merry Christmas.
-
+<BLANKLINE>
 >>> text_indentation("    Hohoho, merry Christmas.    ")
 Hohoho, merry Christmas.
-
+<BLANKLINE>
 >>> text_indentation("        ")
 
 >>> text_indentation("No dots")
@@ -20,7 +20,7 @@ No dots
 >>> text_indentation("New\nline.")
 New
 line
-
+<BLANKLINE>
 Test invalid cases
 >>> try:
 ...     text_indentation(123)
