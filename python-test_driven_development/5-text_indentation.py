@@ -14,10 +14,20 @@ def text_indentation(text):
     if text == "":
         return
     new_text = ""
-    for i in text:
-        new_text += i
-        if new_text.strip()[-1] in ['.', '?', ':'] and i == ' ':
+    char = 0
+    while char < len(text) and text[char] == ' ':
+        char += 1
+
+    while char < len(text):
+        new_text += text[char]
+        if text[char] == "\n" or text[char] in ".?:":
+            if text[char] in ".?:":
+                new_text += "\n\n"
+            char += 1
+            while char < len(text) and text[char] == ' ':
+                char += 1
             continue
-        if i == '.' or i == '?' or i == ':':
-            new_text += "\n\n"
+        char += 1
     print(new_text, end="")
+
+# text_indentation("Holberton. School? How are you: John")
