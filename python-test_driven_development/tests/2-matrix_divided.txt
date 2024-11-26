@@ -1,0 +1,88 @@
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+>>> matrix = [
+...     [3, 6, 9],
+...     [12, 15, 18]
+... ]
+
+Test matrix_divided(matrix, 3)
+>>> matrix_divided(matrix, 3)
+[[1.0, 2.0, 3.0], [4.0, 5.0, 6.0]]
+
+Test matrix_divided(matrix, 2)
+>>> matrix = [
+...     [1, 2, 3],
+...     [4, 5, 6]
+... ]
+>>> matrix_divided(matrix, 2)
+[[0.5, 1.0, 1.5], [2.0, 2.5, 3.0]]
+
+Test matrix_divided(matrix, 3)
+>>> matrix = [
+...     [1.1, -2.2, 3.3],
+...     [4.4, 5.5, -6.6]
+... ]
+>>> matrix_divided(matrix, 3)
+[[0.37, -0.73, 1.1], [1.47, 1.83, -2.2]]
+
+Test invalid matrix
+>>> matrix = "not a list"
+>>> try:
+...     matrix_divided(matrix, 2)
+... except TypeError as e:
+...     print(e)
+matrix must be a matrix (list of lists) of integers/floats
+
+>>> matrix = None
+>>> try:
+...     matrix_divided(matrix, 8)
+... except TypeError as e:
+...     print(e)
+matrix must be a matrix (list of lists) of integers/floats
+
+>>> matrix = [
+...     [5, 4, 3],
+...     [2, "not a number", 1]
+... ]
+>>> try:
+...     matrix_divided(matrix, 2)
+... except TypeError as e:
+...     print(e)
+matrix must be a matrix (list of lists) of integers/floats
+
+>>> matrix = []
+>>> try:
+...     matrix_divided(matrix, 4)
+... except TypeError as e:
+...     print(e)
+matrix must be a matrix (list of lists) of integers/floats
+
+>>> matrix = [[]]
+>>> matrix_divided(matrix, 5)
+[[]]
+
+>>> matrix = [
+...     [1, 2, 3, 4],
+...     [5, 6, 7]
+... ]
+>>> try:
+...     matrix_divided(matrix, 3)
+... except TypeError as e:
+...     print(e)
+Each row of the matrix must have the same size
+
+Test invalid divisors
+>>> matrix = [
+...     [1, 2, 3],
+...     [4, 5, 6]
+... ]
+>>> try:
+...     matrix_divided(matrix, "not a number")
+... except TypeError as e:
+...     print(e)
+div must be a number
+
+>>> try:
+...     matrix_divided(matrix, 0)
+... except ZeroDivisionError as e:
+...     print(e)
+division by zero
