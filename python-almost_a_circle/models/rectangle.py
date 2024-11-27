@@ -95,3 +95,6 @@ class Rectangle(Base):
 
     def area(self):
         return self.x * self.y
+
+    def display(self):
+        print(*("#" * self.x for _ in range(self.y)), sep="\n")
