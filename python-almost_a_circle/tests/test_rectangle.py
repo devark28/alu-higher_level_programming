@@ -53,30 +53,30 @@ class RectangleTestErrors(unittest.TestCase):
     # def test_rect_with_5_args(self):
     #     with self.assertRaises(TypeError):
     #         r = Rectangle(1, 2, 3, 4, 5)
-    #
-    # def test_rect_value_errors_1(self):
-    #     with self.assertRaises(ValueError):
-    #         r = Rectangle(-1, 2)
-    #
-    # def test_rect_value_errors_2(self):
-    #     with self.assertRaises(ValueError):
-    #         r = Rectangle(1, -2)
-    #
-    # def test_rect_value_errors_3(self):
-    #     with self.assertRaises(ValueError):
-    #         r = Rectangle(0, 2)
-    #
-    # def test_rect_value_errors_4(self):
-    #     with self.assertRaises(ValueError):
-    #         r = Rectangle(1, 0)
-    #
-    # def test_rect_value_errors_5(self):
-    #     with self.assertRaises(ValueError):
-    #         r = Rectangle(1, 2, -3)
-    #
-    # def test_rect_value_errors_6(self):
-    #     with self.assertRaises(ValueError):
-    #         r = Rectangle(1, 2, 3, -4)
+
+    def test_rect_value_errors_1(self):
+        with self.assertRaises(ValueError):
+            r = Rectangle(-1, 2)
+
+    def test_rect_value_errors_2(self):
+        with self.assertRaises(ValueError):
+            r = Rectangle(1, -2)
+
+    def test_rect_value_errors_3(self):
+        with self.assertRaises(ValueError):
+            r = Rectangle(0, 2)
+
+    def test_rect_value_errors_4(self):
+        with self.assertRaises(ValueError):
+            r = Rectangle(1, 0)
+
+    def test_rect_value_errors_5(self):
+        with self.assertRaises(ValueError):
+            r = Rectangle(1, 2, -3)
+
+    def test_rect_value_errors_6(self):
+        with self.assertRaises(ValueError):
+            r = Rectangle(1, 2, 3, -4)
 
 
 if __name__ == '__main__':
