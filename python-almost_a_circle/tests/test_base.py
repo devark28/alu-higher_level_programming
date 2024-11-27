@@ -60,6 +60,30 @@ class BaseTest(unittest.TestCase):
         self.assertEqual(json_output, '[{"id": 12}]')
         self.assertIsInstance(json_output, str)
 
+    def test_from_json_string_empty(self):
+        """
+        Test from_json_string empty
+        """
+        list_output = Base.from_json_string("[]")
+        self.assertEqual(list_output, [])
+        self.assertIsInstance(list_output, list)
+
+    def test_from_json_string_none(self):
+        """
+        Test from_json_string None
+        """
+        list_output = Base.from_json_string(None)
+        self.assertEqual(list_output, [])
+        self.assertIsInstance(list_output, list)
+
+    def test_from_json_string_single_dict(self):
+        """
+        Test from_json_string single dict
+        """
+        list_output = Base.from_json_string('[{"id": 89}]')
+        self.assertEqual(list_output, [{'id': 89}])
+        self.assertIsInstance(list_output, list)
+
 
 if __name__ == '__main__':
     unittest.main()
