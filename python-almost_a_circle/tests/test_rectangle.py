@@ -2,7 +2,9 @@
 """
 Test Rectangle class
 """
+import sys
 import unittest
+from io import StringIO
 
 from models.rectangle import Rectangle
 
@@ -77,6 +79,44 @@ class RectangleTestErrors(unittest.TestCase):
     def test_rect_value_errors_6(self):
         with self.assertRaises(ValueError):
             r = Rectangle(1, 2, 3, -4)
+
+    def test_rectangle_area(self):
+        r = Rectangle(3, 4)
+        self.assertEqual(r.area(), 12)
+
+    def test_rectangle_str_representation(self):
+        r = Rectangle(4, 6, 2, 1, 12)
+        self.assertEqual(str(r), "[Rectangle] (12) 2/1 - 4/6")
+
+    def test_rectangle_display(self):
+        r1 = Rectangle(2, 3)
+        captured_output = StringIO()
+        sys.stdout = captured_output
+        r1.display()
+        sys.stdout = sys.__stdout__
+
+        expected_output = "##\n##\n##\n"
+        self.assertEqual(captured_output.getvalue(), expected_output)
+
+    def test_rectangle_display_with_x(self):
+        r2 = Rectangle(3, 2, 1)
+        captured_output = StringIO()
+        sys.stdout = captured_output
+        r2.display()
+        sys.stdout = sys.__stdout__
+
+        expected_output = " ###\n ###\n"
+        self.assertEqual(captured_output.getvalue(), expected_output)
+
+    def test_rectangle_display_with_x_and_y(self):
+        r3 = Rectangle(2, 3, 2, 2)
+        captured_output = StringIO()
+        sys.stdout = captured_output
+        r3.display()
+        sys.stdout = sys.__stdout__
+
+        expected_output = "\n\n  ##\n  ##\n  ##\n"
+        self.assertEqual(captured_output.getvalue(), expected_output)
 
 
 if __name__ == '__main__':
