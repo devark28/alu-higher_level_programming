@@ -116,7 +116,7 @@ class Rectangle(Base):
             self.id, self.__x, self.__y, self.__width, self.__height
         )
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """
         args: id, width, height, x, y
         """
@@ -134,3 +134,20 @@ class Rectangle(Base):
                 self.__init__(args[1], args[2], args[3], self.__y, args[0])
             elif len(args) == 5:
                 self.__init__(args[1], args[2], args[3], args[4], args[0])
+
+        else:
+            if 'id' in kwargs:
+                self.__init__(self.__width, self.__height,
+                              self.__x, self.__y, kwargs['id'])
+            elif 'width' in kwargs:
+                self.__init__(kwargs['width'], self.__height,
+                              self.__x, self.__y)
+            elif 'height' in kwargs:
+                self.__init__(self.__width, kwargs['height'],
+                              self.__x, self.__y)
+            elif 'x' in kwargs:
+                self.__init__(self.__width, self.__height,
+                              kwargs['x'], self.__y)
+            elif 'y' in kwargs:
+                self.__init__(self.__width, self.__height,
+                              self.__x, kwargs['y'])
