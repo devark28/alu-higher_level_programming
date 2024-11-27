@@ -77,7 +77,6 @@ class RectangleTestErrors(unittest.TestCase):
         with self.assertRaises(TypeError):
             r = Rectangle(1, 2, 3, "4")
 
-    @unittest.expectedFailure
     def test_rect_with_5_args(self):
         """
         Test width
