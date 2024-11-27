@@ -123,9 +123,11 @@ class Rectangle(Base):
         if args and len(args) > 0:
             # self.__init__(args[1], args[2], args[3], args[4], args[0])
             if len(args) == 1:
-                self.__init__(self.__width, self.__height, self.__x, self.__y, args[0])
+                self.__init__(self.__width, self.__height,
+                              self.__x, self.__y, args[0])
             elif len(args) == 2:
-                self.__init__(args[1], self.__height, self.__x, self.__y, args[0])
+                self.__init__(args[1], self.__height,
+                              self.__x, self.__y, args[0])
             elif len(args) == 3:
                 self.__init__(args[1], args[2], self.__x, self.__y, args[0])
             elif len(args) == 4:
