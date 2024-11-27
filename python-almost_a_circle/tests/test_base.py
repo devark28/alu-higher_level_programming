@@ -56,7 +56,7 @@ class BaseTest(unittest.TestCase):
         json_dictionary = Base.to_json_string([])
         self.assertEqual(json_dictionary, "[]")
 
-    def test_to_json_string_None(self):
+    def test_to_json_string_none(self):
         """
         Test to_json_string None
         """
