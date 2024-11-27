@@ -1,6 +1,11 @@
+#!/usr/bin/python3
+"""
+Test Base class
+"""
 import unittest
 
-import models.base import Base
+from models.base import Base
+
 
 class BaseTest(unittest.TestCase):
     """
@@ -39,7 +44,6 @@ class BaseTest(unittest.TestCase):
         self.assertEqual(b1.id, 1)
         self.assertEqual(b2.id, 2)
         self.assertEqual(b3.id, 3)
-
 
 
 if __name__ == '__main__':
