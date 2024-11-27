@@ -12,7 +12,27 @@ class RectangleTest(unittest.TestCase):
     Test Rectangle class
     """
 
-    def test_width(self):
+    def test_width_with_2(self):
+        """
+        Test width
+        """
+        r = Rectangle(1, 2)
+        self.assertEqual(r.width, 1)
+        self.assertEqual(r.height, 2)
+        self.assertEqual(r.x, 0)
+        self.assertEqual(r.y, 0)
+
+    def test_width_with_3(self):
+        """
+        Test width
+        """
+        r = Rectangle(1, 2, 3)
+        self.assertEqual(r.width, 1)
+        self.assertEqual(r.height, 2)
+        self.assertEqual(r.x, 3)
+        self.assertEqual(r.y, 0)
+
+    def test_width_with_4(self):
         """
         Test width
         """
