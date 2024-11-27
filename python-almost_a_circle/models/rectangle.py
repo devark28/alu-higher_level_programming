@@ -142,12 +142,12 @@ class Rectangle(Base):
             elif 'width' in kwargs:
                 self.__init__(kwargs['width'], self.__height,
                               self.__x, self.__y)
-            elif 'height' in kwargs:
+            if 'height' in kwargs:
                 self.__init__(self.__width, kwargs['height'],
                               self.__x, self.__y)
-            elif 'x' in kwargs:
+            if 'x' in kwargs:
                 self.__init__(self.__width, self.__height,
                               kwargs['x'], self.__y)
-            elif 'y' in kwargs:
+            if 'y' in kwargs:
                 self.__init__(self.__width, self.__height,
                               self.__x, kwargs['y'])
