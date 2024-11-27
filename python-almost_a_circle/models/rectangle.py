@@ -97,10 +97,10 @@ class Rectangle(Base):
         """
         Calculate area
         """
-        return self.w * self.h
+        return self.__width * self.__height
 
     def display(self):
         """
         Display rectangle
         """
-        print('\n'.join("#" * self.w for _ in range(self.h)))
+        print('\n'.join("#" * self.__width for _ in range(self.__height)))
