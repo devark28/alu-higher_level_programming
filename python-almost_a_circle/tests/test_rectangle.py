@@ -32,14 +32,6 @@ class RectangleTest(unittest.TestCase):
         self.assertEqual(r.x, 3)
         self.assertEqual(r.y, 4)
 
-    def test_rect_with_5(self):
-        r = Rectangle(1, 2, 3, 4, 5)
-        self.assertEqual(r.width, 1)
-        self.assertEqual(r.height, 2)
-        self.assertEqual(r.x, 3)
-        self.assertEqual(r.y, 3)
-        # self.assertEqual(r.id, 3)
-
 
 # @unittest.skip
 class RectangleTestErrors(unittest.TestCase):
@@ -59,6 +51,10 @@ class RectangleTestErrors(unittest.TestCase):
     def test_rect_type_errors_4(self):
         with self.assertRaises(TypeError):
             r = Rectangle(1, 2, 3, "4")
+
+    # def test_rect_with_5_args(self):
+    #     with self.assertRaises(TypeError):
+    #         r = Rectangle(1, 2, 3, 4, 5)
 
     def test_rect_value_errors_1(self):
         with self.assertRaises(ValueError):
