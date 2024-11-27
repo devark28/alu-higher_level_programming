@@ -97,7 +97,7 @@ class Rectangle(Base):
         """
         Calculate area
         """
-        return self.x * self.y
+        return self.w * self.h
 
     def display(self):
         """
