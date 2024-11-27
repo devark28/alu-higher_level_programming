@@ -45,7 +45,7 @@ class RectangleTest(unittest.TestCase):
 
 # @unittest.skip
 class RectangleTestErrors(unittest.TestCase):
-    @unittest.expectedFailure
+
     def test_rect_type_errors_1(self):
         """
         Test type errors
@@ -53,7 +53,6 @@ class RectangleTestErrors(unittest.TestCase):
         with self.assertRaises(TypeError):
             r = Rectangle("1", 2)
 
-    @unittest.expectedFailure
     def test_rect_type_errors_2(self):
         """
         Test type errors
@@ -61,7 +60,6 @@ class RectangleTestErrors(unittest.TestCase):
         with self.assertRaises(TypeError):
             r = Rectangle(1, "2")
 
-    @unittest.expectedFailure
     def test_rect_type_errors_3(self):
         """
         Test type errors
@@ -69,7 +67,6 @@ class RectangleTestErrors(unittest.TestCase):
         with self.assertRaises(TypeError):
             r = Rectangle(1, 2, "3")
 
-    @unittest.expectedFailure
     def test_rect_type_errors_4(self):
         """
         Test type errors
@@ -84,7 +81,6 @@ class RectangleTestErrors(unittest.TestCase):
         with self.assertRaises(TypeError):
             r = Rectangle(1, 2, 3, 4, 5)
 
-    @unittest.expectedFailure
     def test_rect_value_errors_1(self):
         """
         Test value errors
@@ -92,7 +88,6 @@ class RectangleTestErrors(unittest.TestCase):
         with self.assertRaises(ValueError):
             r = Rectangle(-1, 2)
 
-    @unittest.expectedFailure
     def test_rect_value_errors_2(self):
         """
         Test value errors
@@ -100,7 +95,6 @@ class RectangleTestErrors(unittest.TestCase):
         with self.assertRaises(ValueError):
             r = Rectangle(1, -2)
 
-    @unittest.expectedFailure
     def test_rect_value_errors_3(self):
         """
         Test value errors
@@ -108,7 +102,6 @@ class RectangleTestErrors(unittest.TestCase):
         with self.assertRaises(ValueError):
             r = Rectangle(0, 2)
 
-    @unittest.expectedFailure
     def test_rect_value_errors_4(self):
         """
         Test value errors
@@ -116,7 +109,6 @@ class RectangleTestErrors(unittest.TestCase):
         with self.assertRaises(ValueError):
             r = Rectangle
 
-    @unittest.expectedFailure
     def test_rect_value_errors_5(self):
         """
         Test value errors
@@ -124,7 +116,6 @@ class RectangleTestErrors(unittest.TestCase):
         with self.assertRaises(ValueError):
             r = Rectangle(1, 0)
 
-    @unittest.expectedFailure
     def test_rect_value_errors_6(self):
         """
         Test value errors
@@ -132,7 +123,6 @@ class RectangleTestErrors(unittest.TestCase):
         with self.assertRaises(ValueError):
             r = Rectangle(1, 2, -3)
 
-    @unittest.expectedFailure
     def test_rect_value_errors_7(self):
         """
         Test value errors
