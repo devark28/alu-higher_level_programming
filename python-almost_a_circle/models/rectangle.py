@@ -103,4 +103,4 @@ class Rectangle(Base):
         """
         Display rectangle
         """
-        print('\n'.join("#" * self.x for _ in range(self.y)))
+        print('\n'.join("#" * self.w for _ in range(self.h)))
