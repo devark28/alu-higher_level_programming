@@ -140,14 +140,10 @@ class Rectangle(Base):
                 self.__init__(self.__width, self.__height,
                               self.__x, self.__y, kwargs['id'])
             if 'width' in kwargs:
-                self.__init__(kwargs['width'], self.__height,
-                              self.__x, self.__y)
+                self.width = kwargs['width']
             if 'height' in kwargs:
-                self.__init__(self.__width, kwargs['height'],
-                              self.__x, self.__y)
+                self.height = kwargs['height']
             if 'x' in kwargs:
-                self.__init__(self.__width, self.__height,
-                              kwargs['x'], self.__y)
+                self.x = kwargs['x']
             if 'y' in kwargs:
-                self.__init__(self.__width, self.__height,
-                              self.__x, kwargs['y'])
+                self.y = kwargs['y']
