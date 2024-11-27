@@ -9,45 +9,45 @@ from models.square import Square
 
 
 class TestSquare(unittest.TestCase):
-    # def test_square_creation(self):
-    #     s1 = Square(1)
-    #     self.assertEqual(s1.size, 1)
-    #     self.assertEqual(s1.x, 0)
-    #     self.assertEqual(s1.y, 0)
-    #
-    #     s2 = Square(1, 2)
-    #     self.assertEqual(s2.size, 1)
-    #     self.assertEqual(s2.x, 2)
-    #     self.assertEqual(s2.y, 0)
-    #
-    #     s3 = Square(1, 2, 3)
-    #     self.assertEqual(s3.size, 1)
-    #     self.assertEqual(s3.x, 2)
-    #     self.assertEqual(s3.y, 3)
-    #
-    # def test_square_creation_with_string_input(self):
-    #     with self.assertRaises(TypeError):
-    #         Square("1")
-    #     with self.assertRaises(TypeError):
-    #         Square(1, "2")
-    #     with self.assertRaises(TypeError):
-    #         Square(1, 2, "3")
-    #
+    def test_square_creation(self):
+        s1 = Square(1)
+        self.assertEqual(s1.size, 1)
+        self.assertEqual(s1.x, 0)
+        self.assertEqual(s1.y, 0)
+
+        s2 = Square(1, 2)
+        self.assertEqual(s2.size, 1)
+        self.assertEqual(s2.x, 2)
+        self.assertEqual(s2.y, 0)
+
+        s3 = Square(1, 2, 3)
+        self.assertEqual(s3.size, 1)
+        self.assertEqual(s3.x, 2)
+        self.assertEqual(s3.y, 3)
+
+    def test_square_creation_with_string_input(self):
+        with self.assertRaises(TypeError):
+            Square("1")
+        with self.assertRaises(TypeError):
+            Square(1, "2")
+        with self.assertRaises(TypeError):
+            Square(1, 2, "3")
+
     # def test_square_creation_with_extra_args(self):
     #     with self.assertRaises(TypeError):
     #         Square(1, 2, 3, 4)
-    #
-    # def test_square_negative_input(self):
-    #     with self.assertRaises(ValueError):
-    #         Square(-1)
-    #     with self.assertRaises(ValueError):
-    #         Square(1, -2)
-    #     with self.assertRaises(ValueError):
-    #         Square(1, 2, -3)
-    #
-    # def test_square_zero_input(self):
-    #     with self.assertRaises(ValueError):
-    #         Square(0)
+
+    def test_square_negative_input(self):
+        with self.assertRaises(ValueError):
+            Square(-1)
+        with self.assertRaises(ValueError):
+            Square(1, -2)
+        with self.assertRaises(ValueError):
+            Square(1, 2, -3)
+
+    def test_square_zero_input(self):
+        with self.assertRaises(ValueError):
+            Square(0)
 
     def test_square_str_representation(self):
         s = Square(5, 1, 2, 89)
