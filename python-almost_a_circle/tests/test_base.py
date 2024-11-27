@@ -70,6 +70,7 @@ class BaseTest(unittest.TestCase):
         dict_input = [{'id': 12}]
         json_output = Base.to_json_string(dict_input)
         self.assertEqual(json_output, '[{"id": 12}]')
+        self.assertIsInstance(json_output, str)
 
 
 if __name__ == '__main__':
