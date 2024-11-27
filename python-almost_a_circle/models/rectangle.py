@@ -139,7 +139,7 @@ class Rectangle(Base):
             if 'id' in kwargs:
                 self.__init__(self.__width, self.__height,
                               self.__x, self.__y, kwargs['id'])
-            elif 'width' in kwargs:
+            if 'width' in kwargs:
                 self.__init__(kwargs['width'], self.__height,
                               self.__x, self.__y)
             if 'height' in kwargs:
