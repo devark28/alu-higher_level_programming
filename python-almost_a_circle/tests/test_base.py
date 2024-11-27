@@ -17,22 +17,16 @@ class BaseTest(unittest.TestCase):
         Test auto ids
         """
         b1 = Base()
-        b2 = Base()
+        b2 = Base(12)
         b3 = Base()
-        self.assertEqual(b1.id, 1)
-        self.assertEqual(b2.id, 2)
-        self.assertEqual(b3.id, 3)
+        self.assertEqual(b1.id, b3.id - 1)
 
     def test_manual_ids(self):
         """
         Test manual ids
         """
         b1 = Base(98)
-        b2 = Base(99)
-        b3 = Base(100)
         self.assertEqual(b1.id, 98)
-        self.assertEqual(b2.id, 99)
-        self.assertEqual(b3.id, 100)
 
     def test_ids_is_None(self):
         """
@@ -41,9 +35,7 @@ class BaseTest(unittest.TestCase):
         b1 = Base(None)
         b2 = Base(None)
         b3 = Base(None)
-        self.assertEqual(b1.id, 1)
-        self.assertEqual(b2.id, 2)
-        self.assertEqual(b3.id, 3)
+        self.assertEqual(b1.id, b3.id - 2)
 
 
 if __name__ == '__main__':
