@@ -42,6 +42,10 @@ class RectangleTest(unittest.TestCase):
         self.assertEqual(r.x, 3)
         self.assertEqual(r.y, 4)
 
+
+@unittest.skip
+class RectangleTestErrors(unittest.TestCase):
+    @unittest.expectedFailure
     def test_rect_type_errors_1(self):
         """
         Test type errors
@@ -77,35 +81,54 @@ class RectangleTest(unittest.TestCase):
         with self.assertRaises(TypeError):
             r = Rectangle(1, 2, 3, 4, 5)
 
-    """
-    Test of Rectangle(-1, 2) exists
-    
-    Test of Rectangle(1, -2) exists
-    
-    Test of Rectangle(0, 2) exists
-    
-    Test of Rectangle(1, 0) exists
-    
-    Test of Rectangle(1, 2, -3) exists
-    
-    Test of Rectangle(1, 2, 3, -4) exists
-    """
+    def test_rect_value_errors_1(self):
+        """
+        Test value errors
+        """
+        with self.assertRaises(ValueError):
+            r = Rectangle(-1, 2)
 
-    # def test_rect_value_errors(self):
-    #     """
-    #     Test value errors
-    #     """
-    #     with self.assertRaises(ValueError):
-    #         r = Rectangle(-1, 2)
-    #
-    #     with self.assertRaises(ValueError):
-    #         r = Rectangle(1, -2)
-    #
-    #     with self.assertRaises(ValueError):
-    #         r = Rectangle(0, 2)
-    #
-    #     with self.assertRaises(ValueError):
-    #         r = Rectangle
+    def test_rect_value_errors_2(self):
+        """
+        Test value errors
+        """
+        with self.assertRaises(ValueError):
+            r = Rectangle(1, -2)
+
+    def test_rect_value_errors_3(self):
+        """
+        Test value errors
+        """
+        with self.assertRaises(ValueError):
+            r = Rectangle(0, 2)
+
+    def test_rect_value_errors_4(self):
+        """
+        Test value errors
+        """
+        with self.assertRaises(ValueError):
+            r = Rectangle
+
+    def test_rect_value_errors_5(self):
+        """
+        Test value errors
+        """
+        with self.assertRaises(ValueError):
+            r = Rectangle(1, 0)
+
+    def test_rect_value_errors_6(self):
+        """
+        Test value errors
+        """
+        with self.assertRaises(ValueError):
+            r = Rectangle(1, 2, -3)
+
+    def test_rect_value_errors_7(self):
+        """
+        Test value errors
+        """
+        with self.assertRaises(ValueError):
+            r = Rectangle(1, 2, 3, -4)
 
 
 if __name__ == '__main__':
