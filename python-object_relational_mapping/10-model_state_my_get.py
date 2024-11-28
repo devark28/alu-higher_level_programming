@@ -22,8 +22,8 @@ if __name__ == "__main__":
 
     state = session.query(State).filter(State.name == search_name).first()
     if state is not None:
-        print("Not found")
+        print(f"{state.id}")
     else:
-        print(state.id)
+        print("Not found")
 
     session.close()
