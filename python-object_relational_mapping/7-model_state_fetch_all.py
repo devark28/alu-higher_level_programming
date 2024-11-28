@@ -7,8 +7,7 @@ from sys import argv
 from sqlalchemy import create_engine
 from sqlalchemy.orm import Session
 
-from model_state import Base
-from model_state import State
+from model_state import State, Base
 
 if __name__ == "__main__":
     username, password, database = argv[1:4]
