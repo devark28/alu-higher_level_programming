@@ -17,13 +17,13 @@ if __name__ == "__main__":
         .format(username, password, database),
         pool_pre_ping=True
     )
-    Base.metadata.create_all(engine)
     session = Session(engine)
+    Base.metadata.create_all(engine)
 
     state = session.query(State).filter(State.name == search_name).first()
-    if state is None:
-        print("Not found")
+    if state is not None:
+        print(f"{state.id}")
     else:
-        print(f"{state.__dict__['id']}")
+        print("Not found")
 
     session.close()
