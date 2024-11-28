@@ -24,6 +24,6 @@ if __name__ == "__main__":
     ).all()
     for state in states:
         session.delete(state)
-    session.commit()
+    session.commit()  # why it failed, i forgot to commit the changes
 
     session.close()
