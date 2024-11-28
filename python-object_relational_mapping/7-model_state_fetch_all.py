@@ -14,7 +14,8 @@ if __name__ == "__main__":
     # default host is 'localhost' and default port is '3306'
     engine = create_engine(
         'mysql+mysqldb://{}:{}@localhost/{}'
-        .format(username, password, database)
+        .format(username, password, database),
+        pool_pre_ping=True
     )
     session = Session(engine)
     Base.metadata.create_all(engine)
