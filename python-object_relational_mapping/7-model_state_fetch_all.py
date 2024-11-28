@@ -4,10 +4,9 @@ Module to get all states
 """
 from sys import argv
 
+from model_state import State, Base
 from sqlalchemy import create_engine
 from sqlalchemy.orm import Session
-
-from model_state import State, Base
 
 if __name__ == "__main__":
     username, password, database = argv[1:4]
