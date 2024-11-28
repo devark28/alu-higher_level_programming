@@ -19,8 +19,8 @@ if __name__ == "__main__":
     cursor = connection.cursor()
     cursor.execute(
         'SELECT * FROM states '
-        'WHERE name = "{}" '
-        'ORDER BY states.id'.format(search_name))
+        'WHERE name = %s '
+        'ORDER BY states.id', (search_name,))
     states = cursor.fetchall()
 
     for state in states:
