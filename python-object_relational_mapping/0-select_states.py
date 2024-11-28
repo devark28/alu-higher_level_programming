@@ -11,7 +11,7 @@ if __name__ == "__main__":
     # default host is 'localhost' and default port is '3306'
     connection = MySQLdb.connect(
         user=username,
-        password=password,
+        passwd=password,
         db=database
     )
 
