@@ -6,7 +6,7 @@ from sys import argv
 
 from model_state import State, Base
 from sqlalchemy import create_engine
-from sqlalchemy.orm import Session
+from sqlalchemy.orm import sessionmaker
 
 if __name__ == "__main__":
     username, password, database = argv[1:4]
@@ -17,8 +17,8 @@ if __name__ == "__main__":
         .format(username, password, database),
         pool_pre_ping=True
     )
+    session = (sessionmaker(engine))()
     Base.metadata.create_all(engine)
-    session = Session(engine)
 
     state = State(name="Louisiana")
     session.add(state)
