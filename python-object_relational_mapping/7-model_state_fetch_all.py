@@ -4,12 +4,12 @@ Module to get all states
 """
 from sys import argv
 
-from sqlalchemy import create_engine
-from sqlalchemy.orm import Session
-
 from model_state import State, Base
 
 if __name__ == "__main__":
+    from sqlalchemy import create_engine
+    from sqlalchemy.orm import Session
+
     username, password, database = argv[1:4]
     # default host is 'localhost' and default port is '3306'
     engine = create_engine(
