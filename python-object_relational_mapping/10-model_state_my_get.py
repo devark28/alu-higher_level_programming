@@ -17,8 +17,8 @@ if __name__ == "__main__":
         .format(username, password, database),
         pool_pre_ping=True
     )
-    session = Session(engine)
     Base.metadata.create_all(engine)
+    session = Session(engine)
 
     state = session.query(State).filter(State.name == search_name).first()
     if state is None:
