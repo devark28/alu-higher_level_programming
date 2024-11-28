@@ -21,9 +21,9 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
 
     state = session.query(State).filter(State.name == search_name).first()
-    if state is not None:
-        print(f"{state.__dict__['id']}")
-    else:
+    if state is None:
         print("Not found")
+    else:
+        print(f"{state.id}")  # __dict__['id']
 
     session.close()
