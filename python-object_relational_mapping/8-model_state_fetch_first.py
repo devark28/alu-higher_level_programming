@@ -20,6 +20,6 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
 
     with session.query(State).first() as state:
-        print("{}: {}".format(state.id, state.name))
+        print("{}: {}".format(state.__dict__['id'], state.__dict__['name']))
 
     session.close()
