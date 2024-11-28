@@ -24,7 +24,7 @@ if __name__ == "__main__":
         'ORDER BY cities.id'.format(search_name))
     states = cursor.fetchall()
 
-    for state in states:
-        print(state)
-
+    for i in range(len(states)):
+        print(states[i][0], end=", " if i + 1 < len(states) else "")
+    print("")
     connection.close()
