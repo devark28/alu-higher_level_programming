@@ -24,6 +24,6 @@ if __name__ == "__main__":
     if state is None:
         print("Not found")
     else:
-        print(f"{state.id}")  # __dict__['id']
+        print(f"{state.__dict__['id']}")
 
     session.close()
