@@ -20,7 +20,8 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
 
     states = session.query(State).filter(
-        State.name.ilike('%a%')
+        # State.name.ilike('%a%')
+        State.name.contains('a')
     ).all()
     for state in states:
         session.delete(state)
