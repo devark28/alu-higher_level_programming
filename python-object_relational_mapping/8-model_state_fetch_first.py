@@ -19,7 +19,10 @@ if __name__ == "__main__":
     session = Session(engine)
     Base.metadata.create_all(engine)
 
-    with session.query(State).first() as state:
+    state = session.query(State).first()
+    if state:
         print("{}: {}".format(state.__dict__['id'], state.__dict__['name']))
+    else:
+        print("Nothing")
 
     session.close()
