@@ -20,8 +20,8 @@ if __name__ == "__main__":
     cursor.execute(
         'SELECT cities.id, cities.name , states.name '
         'FROM states INNER JOIN cities '
-        'ON states.id = cities.state_id WHERE states.name = "{}" '
-        'ORDER BY cities.id'.format(search_name))
+        'ON states.id = cities.state_id WHERE states.name = %s '
+        'ORDER BY cities.id', (search_name,))
     states = cursor.fetchall()
 
     for i in range(len(states)):
