@@ -25,6 +25,6 @@ if __name__ == "__main__":
     states = cursor.fetchall()
 
     for i in range(len(states)):
-        print(states[i][0], end=", " if i + 1 < len(states) else "")
+        print(states[i][1], end=", " if i + 1 < len(states) else "")
     print("")
     connection.close()
