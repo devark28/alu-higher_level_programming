@@ -10,7 +10,6 @@ from sqlalchemy.orm import Session
 
 if __name__ == "__main__":
     username, password, database = argv[1:4]
-    search_name = argv[4]
     # default host is 'localhost' and default port is '3306'
     engine = create_engine(
         'mysql+mysqldb://{}:{}@localhost/{}'
