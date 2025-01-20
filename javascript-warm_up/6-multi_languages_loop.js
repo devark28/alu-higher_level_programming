@@ -1,2 +1,2 @@
 #!/usr/bin/node
-let strs = ['C is fun']
+let strs = ['C is fun', 'Python is cool']
