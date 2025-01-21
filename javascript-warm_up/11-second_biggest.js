@@ -4,6 +4,8 @@ function getArgs() {
   return scriptArgs.length === 0 ? undefined : scriptArgs;
 }
 
-function getSecongLargest(elements = []) {
+function getSecondLargest(elements = []) {
   return elements.map(Number).toSorted((a, b) => a - b).at(1) ?? 0
 }
+
+console.log(getSecondLargest(getArgs()));
