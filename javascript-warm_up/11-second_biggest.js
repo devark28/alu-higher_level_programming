@@ -1,4 +1,4 @@
-#!/usr/bin/node
+#!/usr/bin/env node
 function getArgs() {
   const scriptArgs = process.argv.slice(2);
   return scriptArgs.length === 0 ? undefined : scriptArgs;
