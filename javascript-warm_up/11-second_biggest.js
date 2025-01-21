@@ -1,10 +1,10 @@
 #!/usr/bin/node
-function getArgs() {
+function getArgs () {
   const scriptArgs = process.argv.slice(2);
   return scriptArgs.length === 0 ? undefined : scriptArgs;
 }
 
-function getSecondLargest(elements = []) {
+function getSecondLargest (elements = []) {
   if (elements.length <= 1) {
     return 0;
   }
