@@ -8,7 +8,7 @@ function getSecondLargest(elements = []) {
   if (elements.length <= 1) {
     return 0;
   }
-  let nums = elements.map(Number);
+  const nums = elements.map(Number);
   return nums.sort((a, b) => b - a)[1];
 }
 
