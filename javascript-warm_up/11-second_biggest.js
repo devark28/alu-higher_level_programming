@@ -5,7 +5,7 @@ function getArgs() {
 }
 
 function getSecondLargest(elements = []) {
-  if (arguments.length <= 1) {
+  if (elements.length <= 1) {
     return 0;
   }
   return elements.map(Number).toSorted((a, b) => a - b).at(1);
