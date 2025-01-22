@@ -2,6 +2,6 @@
 let count = 0;
 module.exports = {
   logMe: (item) => {
-    console.log(`${count}`)
+    console.log(`${count}L`)
   }
 };
