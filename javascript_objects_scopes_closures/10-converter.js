@@ -1,7 +1,7 @@
 #!/usr/bin/node
 let count = 0;
 module.exports = {
-  logMe: (item) => {
+  converter: (item) => {
     console.log(`${count++}: ${item}`);
   }
 };
