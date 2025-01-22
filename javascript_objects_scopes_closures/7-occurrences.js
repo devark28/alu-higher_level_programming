@@ -1,5 +1,6 @@
 #!/usr/bin/node
-function nbOccurences (list, searchElement) {
-
-}
-module.exports = { nbOccurences };
+module.exports = {
+  nbOccurences: (list, searchElement) => {
+    return list.indexOf(searchElement);
+  }
+};
