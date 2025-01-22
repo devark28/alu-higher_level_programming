@@ -1,6 +1,6 @@
 #!/usr/bin/node
 module.exports = {
-  logMe: () => {
+  logMe: (item) => {
     return list.reduceRight((acc, ele) => acc.concat(ele), []);
   }
 };
