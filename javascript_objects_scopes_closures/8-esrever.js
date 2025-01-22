@@ -1,6 +1,6 @@
 #!/usr/bin/node
 module.exports = {
-  nbOccurences: (list) => {
+  esrever: (list) => {
     return list.toReversed();
   }
 };
