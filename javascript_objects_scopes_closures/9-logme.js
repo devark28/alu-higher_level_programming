@@ -1,6 +1,6 @@
 #!/usr/bin/node
 module.exports = {
-  esrever: (list) => {
+  logMe: () => {
     return list.reduceRight((acc, ele) => acc.concat(ele), []);
   }
 };
