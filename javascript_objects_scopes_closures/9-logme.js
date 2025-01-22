@@ -1,6 +1,7 @@
 #!/usr/bin/node
+let count = 0;
 module.exports = {
   logMe: (item) => {
-    return list.reduceRight((acc, ele) => acc.concat(ele), []);
+    console.log(`${count}`)
   }
 };
