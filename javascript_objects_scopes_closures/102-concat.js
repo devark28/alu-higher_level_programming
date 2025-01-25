@@ -1,6 +1,3 @@
 #!/usr/bin/node
-const { dict } = require('./101-data');
-console.log(Object.entries(dict).reduce((acc, [key, val]) => ({
-  ...acc,
-  [val]: acc[val]?.length ? acc[val].concat(key) : [key]
-}), {}));
+const [,,fileA,fileB,fileC] = process.argv;
+console.log(fileA, fileB, fileC);
