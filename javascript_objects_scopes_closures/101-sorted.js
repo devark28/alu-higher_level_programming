@@ -1,4 +1,4 @@
 #!/usr/bin/node
-const { dict } = require('./100-data');
+const { dict } = require('./101-data');
 console.log(dict);
-console.log(list.map((n, i) => n * i));
+console.log(Object.entries(dict).reduce((acc, [key, val]) => n * i, {}));
