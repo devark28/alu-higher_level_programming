@@ -1,7 +1,3 @@
 #!/usr/bin/node
-const list = require('100-data.js');
-module.exports = {
-  converter: (base) => {
-    return (num) => num.toString(base);
-  }
-};
+const {list} = require('100-data.js');
+list.map(n=>console.log(n));
