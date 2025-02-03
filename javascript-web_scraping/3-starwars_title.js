@@ -1,5 +1,5 @@
 #!/usr/bin/node
-const [, , URL] = process.argv;
-require('request')(URL, (err, res, body) => {
+const [, , id] = process.argv;
+require('request')(`https://swapi-api.alx-tools.com/api/films/${id}`, (err, res, body) => {
   console.log(`code: ${res?.statusCode}`);
 });
