@@ -1,3 +1,3 @@
 #!/usr/bin/node
-const [, , fileA] = process.argv;
-// require('request').
+const [, , URL] = process.argv;
+require('request').get(URL);
