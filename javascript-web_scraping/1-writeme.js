@@ -1,3 +1,3 @@
 #!/usr/bin/node
 const [, , fileA, contentA] = process.argv;
-require('fs').readFileSync(fileA,{encoding:'utf-8'});
+require('fs').writeFileSync(fileA, contentA, {encoding: 'utf-8'});
