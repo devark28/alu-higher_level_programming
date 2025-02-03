@@ -1,3 +1,3 @@
 #!/usr/bin/node
 const [, , URL] = process.argv;
-require('request').get(URL);
+console.log(require('request').get(URL));
