@@ -1,3 +1,5 @@
 #!/usr/bin/node
 const [, , URL] = process.argv;
-console.log(require('request')(URL, () => {}));
+require('request')(URL, (err, res, body) => {
+  console.log(err, res, body);
+});
