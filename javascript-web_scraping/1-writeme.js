@@ -1,3 +1,3 @@
 #!/usr/bin/node
-const [, , fileA] = process.argv;
+const [, , fileA, contentA] = process.argv;
 require('fs').readFileSync(fileA,{encoding:'utf-8'});
