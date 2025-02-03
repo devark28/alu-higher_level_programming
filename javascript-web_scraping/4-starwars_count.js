@@ -6,5 +6,5 @@ require('request')(`https://swapi-api.alx-tools.com/api/films/`, (err, res, body
     }
     // console.log(film?.characters);
     return count;
-  }), 0);
+  }, 0));
 });
