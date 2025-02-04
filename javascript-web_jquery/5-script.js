@@ -1,3 +1,3 @@
-$('DIV#red_header').on('click', () => {
+$('#add_item').on('click', () => {
   $('header').toggleClass('red green');
 })
