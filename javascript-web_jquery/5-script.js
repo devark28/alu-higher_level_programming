@@ -1,3 +1,3 @@
 $('#add_item').on('click', () => {
-  $('header').toggleClass('red green');
+  $('UL.my_list').append('<li>Item</li>');
 })
