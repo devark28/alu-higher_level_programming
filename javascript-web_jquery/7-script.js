@@ -1,3 +1,4 @@
-$('#update_header').on('click', () => {
-  $('header').text('"New Header!!!"');
-})
+// fetches a character name with an API
+$.get('https://swapi-api.alx-tools.com/api/people/5/?format=json', (data) => {
+  $('#character').text(data.name);
+});
