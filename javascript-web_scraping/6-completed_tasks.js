@@ -4,10 +4,12 @@ require('request')(URL, (err, res, body) => {
   // console.log(JSON.parse(body));
   console.log(JSON.parse(body).reduce((acc, usr) => {
     console.log(acc);
-    if(acc[usr?.userId] && usr?.completed){
-      acc[usr?.userId] += 1;
-    }else{
-      acc[usr?.userId] = 1;
+    if(usr?.completed){
+      if(acc[usr?.userId]){
+        acc[usr?.userId] += 1;
+      }else{
+        acc[usr?.userId] = 1;
+      }
     }
     return acc;
     // return {
