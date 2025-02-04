@@ -1,2 +1,2 @@
 #!/usr/bin/node
-document.querySelector()
+document.querySelector('header');
