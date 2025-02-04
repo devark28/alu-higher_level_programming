@@ -1,2 +1,2 @@
-#!/usr/bin/node
+#!echo
 document.querySelector('header').style.color = '#FF0000';
