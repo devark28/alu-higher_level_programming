@@ -1,5 +1,4 @@
-#!/usr/bin/node
-const [, , URL, fileA] = process.argv;
+const [, , URL] = process.argv;
 require('request')(URL, (err, res, body) => {
-  require('fs').writeFileSync(fileA, body, {encoding: 'utf-8'});
+  console.log(JSON.parse(body));
 });
